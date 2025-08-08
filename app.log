@@ -1,0 +1,974 @@
+2025-08-07 12:06:42,347 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-07 12:06:42,347 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-07 12:06:42,348 - INFO -  * Restarting with stat
+2025-08-07 12:06:42,646 - WARNING -  * Debugger is active!
+2025-08-07 12:06:42,651 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 12:17:15,099 - INFO - 127.0.0.1 - - [07/Aug/2025 12:17:15] "GET / HTTP/1.1" 200 -
+2025-08-07 12:17:15,108 - INFO - 127.0.0.1 - - [07/Aug/2025 12:17:15] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-07 12:17:15,108 - INFO - 127.0.0.1 - - [07/Aug/2025 12:17:15] "GET /static/js/script.js HTTP/1.1" 200 -
+2025-08-07 12:17:15,316 - INFO - 127.0.0.1 - - [07/Aug/2025 12:17:15] "GET / HTTP/1.1" 200 -
+2025-08-07 12:17:15,331 - INFO - 127.0.0.1 - - [07/Aug/2025 12:17:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:17:15,422 - INFO - 127.0.0.1 - - [07/Aug/2025 12:17:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-07 12:17:39,703 - INFO - Uploaded resume: resumes/f3b91c71-99e5-40b4-b268-e978de2729b0_Ram_data_scientist_pdf.pdf
+2025-08-07 12:17:39,765 - ERROR - Error processing resumes: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-08-07 12:17:39,765 - INFO - 127.0.0.1 - - [07/Aug/2025 12:17:39] "POST / HTTP/1.1" 200 -
+2025-08-07 12:17:39,779 - INFO - 127.0.0.1 - - [07/Aug/2025 12:17:39] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 12:17:39,779 - INFO - 127.0.0.1 - - [07/Aug/2025 12:17:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:18:37,856 - INFO - 127.0.0.1 - - [07/Aug/2025 12:18:37] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+2025-08-07 12:18:37,857 - INFO - 127.0.0.1 - - [07/Aug/2025 12:18:37] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+2025-08-07 12:18:37,857 - INFO - 127.0.0.1 - - [07/Aug/2025 12:18:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-07 12:20:37,345 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/app.py', reloading
+2025-08-07 12:20:37,424 - INFO -  * Restarting with stat
+2025-08-07 12:20:37,839 - WARNING -  * Debugger is active!
+2025-08-07 12:20:37,843 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 12:21:45,866 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/app.py', reloading
+2025-08-07 12:21:45,920 - INFO -  * Restarting with stat
+2025-08-07 12:21:46,200 - WARNING -  * Debugger is active!
+2025-08-07 12:21:46,203 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 12:24:41,659 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/app.py', reloading
+2025-08-07 12:24:41,736 - INFO -  * Restarting with stat
+2025-08-07 12:32:34,391 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-07 12:32:34,391 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-07 12:32:34,391 - INFO -  * Restarting with stat
+2025-08-07 12:32:34,664 - WARNING -  * Debugger is active!
+2025-08-07 12:32:34,669 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 12:33:31,377 - INFO - 127.0.0.1 - - [07/Aug/2025 12:33:31] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-07 12:33:31,389 - INFO - 127.0.0.1 - - [07/Aug/2025 12:33:31] "GET /login HTTP/1.1" 200 -
+2025-08-07 12:33:31,396 - INFO - 127.0.0.1 - - [07/Aug/2025 12:33:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:33:32,151 - INFO - 127.0.0.1 - - [07/Aug/2025 12:33:32] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-07 12:33:32,159 - INFO - 127.0.0.1 - - [07/Aug/2025 12:33:32] "GET /login HTTP/1.1" 200 -
+2025-08-07 12:33:32,162 - INFO - 127.0.0.1 - - [07/Aug/2025 12:33:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:33:57,409 - WARNING - Failed login attempt for user admin.
+2025-08-07 12:33:57,409 - INFO - 127.0.0.1 - - [07/Aug/2025 12:33:57] "POST /login HTTP/1.1" 200 -
+2025-08-07 12:33:57,419 - INFO - 127.0.0.1 - - [07/Aug/2025 12:33:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:34:34,140 - WARNING - Failed login attempt for user admin.
+2025-08-07 12:34:34,141 - INFO - 127.0.0.1 - - [07/Aug/2025 12:34:34] "POST /login HTTP/1.1" 200 -
+2025-08-07 12:34:34,150 - INFO - 127.0.0.1 - - [07/Aug/2025 12:34:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:37:18,475 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-07 12:37:18,475 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-07 12:37:18,476 - INFO -  * Restarting with stat
+2025-08-07 12:37:18,771 - WARNING -  * Debugger is active!
+2025-08-07 12:37:18,775 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 12:37:35,140 - WARNING - Failed login attempt for user admin.
+2025-08-07 12:37:35,147 - INFO - 127.0.0.1 - - [07/Aug/2025 12:37:35] "POST /login HTTP/1.1" 200 -
+2025-08-07 12:37:35,158 - INFO - 127.0.0.1 - - [07/Aug/2025 12:37:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:38:02,184 - WARNING - Failed login attempt for user admin.
+2025-08-07 12:38:02,184 - INFO - 127.0.0.1 - - [07/Aug/2025 12:38:02] "POST /login HTTP/1.1" 200 -
+2025-08-07 12:38:02,194 - INFO - 127.0.0.1 - - [07/Aug/2025 12:38:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:39:12,395 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/app.py', reloading
+2025-08-07 12:39:12,471 - INFO -  * Restarting with stat
+2025-08-07 12:39:12,890 - WARNING -  * Debugger is active!
+2025-08-07 12:39:12,893 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 12:40:02,261 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/app.py', reloading
+2025-08-07 12:40:02,332 - INFO -  * Restarting with stat
+2025-08-07 12:40:02,610 - WARNING -  * Debugger is active!
+2025-08-07 12:40:02,614 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 12:40:10,723 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-07 12:40:10,723 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-07 12:40:10,723 - INFO -  * Restarting with stat
+2025-08-07 12:40:10,992 - WARNING -  * Debugger is active!
+2025-08-07 12:40:10,995 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 12:40:30,740 - INFO - 127.0.0.1 - - [07/Aug/2025 12:40:30] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-07 12:40:30,753 - INFO - 127.0.0.1 - - [07/Aug/2025 12:40:30] "GET /login HTTP/1.1" 200 -
+2025-08-07 12:40:30,762 - INFO - 127.0.0.1 - - [07/Aug/2025 12:40:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:40:51,068 - INFO - Login attempt: username=admin, password=admin123
+2025-08-07 12:40:51,068 - INFO - Expected credentials: username=admin, password=strongpassword
+2025-08-07 12:40:51,069 - WARNING - Failed login attempt for user admin.
+2025-08-07 12:40:51,069 - INFO - 127.0.0.1 - - [07/Aug/2025 12:40:51] "POST /login HTTP/1.1" 200 -
+2025-08-07 12:40:51,080 - INFO - 127.0.0.1 - - [07/Aug/2025 12:40:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:41:25,944 - INFO - Login attempt: username=admin, password=strongpassword
+2025-08-07 12:41:25,944 - INFO - Expected credentials: username=admin, password=strongpassword
+2025-08-07 12:41:25,944 - INFO - User admin logged in successfully.
+2025-08-07 12:41:25,945 - INFO - 127.0.0.1 - - [07/Aug/2025 12:41:25] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-07 12:41:25,977 - ERROR - Error loading dashboard: Could not locate a bind configured on mapper Mapper[CandidateProfile(candidate_profiles)], SQL expression or this Session.
+Traceback (most recent call last):
+  File "/Users/karthik/Desktop/Projects/hiring_tool/app.py", line 148, in dashboard
+    candidates = session.query(CandidateProfile).order_by(CandidateProfile.fit_score.desc()).all()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2693, in all
+    return self._iter().all()  # type: ignore
+           ^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2847, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2308, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2178, in _execute_internal
+    bind = self.get_bind(**bind_arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2792, in get_bind
+    raise sa_exc.UnboundExecutionError(
+sqlalchemy.exc.UnboundExecutionError: Could not locate a bind configured on mapper Mapper[CandidateProfile(candidate_profiles)], SQL expression or this Session.
+2025-08-07 12:41:25,984 - INFO - Database session closed (dashboard).
+2025-08-07 12:41:25,985 - INFO - 127.0.0.1 - - [07/Aug/2025 12:41:25] "GET /dashboard HTTP/1.1" 200 -
+2025-08-07 12:41:25,992 - INFO - 127.0.0.1 - - [07/Aug/2025 12:41:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:43:33,309 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/app.py', reloading
+2025-08-07 12:43:33,386 - INFO -  * Restarting with stat
+2025-08-07 12:43:33,800 - WARNING -  * Debugger is active!
+2025-08-07 12:43:33,804 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 12:43:49,292 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/app.py', reloading
+2025-08-07 12:43:49,368 - INFO -  * Restarting with stat
+2025-08-07 12:43:49,649 - WARNING -  * Debugger is active!
+2025-08-07 12:43:49,652 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 12:44:01,264 - ERROR - Error loading dashboard: Could not locate a bind configured on mapper Mapper[CandidateProfile(candidate_profiles)], SQL expression or this Session.
+Traceback (most recent call last):
+  File "/Users/karthik/Desktop/Projects/hiring_tool/app.py", line 148, in dashboard
+    candidates = session.query(CandidateProfile).order_by(CandidateProfile.fit_score.desc()).all()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2693, in all
+    return self._iter().all()  # type: ignore
+           ^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2847, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2308, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2178, in _execute_internal
+    bind = self.get_bind(**bind_arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2792, in get_bind
+    raise sa_exc.UnboundExecutionError(
+sqlalchemy.exc.UnboundExecutionError: Could not locate a bind configured on mapper Mapper[CandidateProfile(candidate_profiles)], SQL expression or this Session.
+2025-08-07 12:44:01,273 - INFO - Database session closed (dashboard).
+2025-08-07 12:44:01,273 - INFO - 127.0.0.1 - - [07/Aug/2025 12:44:01] "GET /dashboard HTTP/1.1" 200 -
+2025-08-07 12:44:01,278 - INFO - 127.0.0.1 - - [07/Aug/2025 12:44:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:44:05,557 - INFO - 127.0.0.1 - - [07/Aug/2025 12:44:05] "GET / HTTP/1.1" 200 -
+2025-08-07 12:44:05,566 - INFO - 127.0.0.1 - - [07/Aug/2025 12:44:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:44:05,566 - INFO - 127.0.0.1 - - [07/Aug/2025 12:44:05] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 12:44:24,492 - INFO - Uploaded resume: resumes/20ce4488-830d-4ffc-8492-a316d10d5baf_Ram_data_scientist_pdf.pdf
+2025-08-07 12:44:24,551 - ERROR - Error processing resumes: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+Traceback (most recent call last):
+  File "/Users/karthik/Desktop/Projects/hiring_tool/app.py", line 82, in upload
+    extracted_data = parse_resume_with_gemini(text)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/resume_processor.py", line 82, in parse_resume_with_openai
+    raw = _call_openai(
+          ^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/resume_processor.py", line 53, in _call_openai
+    response = openai.ChatCompletion.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/lib/_old_api.py", line 39, in __call__
+    raise APIRemovedInV1(symbol=self._symbol)
+openai.lib._old_api.APIRemovedInV1: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-08-07 12:44:24,552 - INFO - Database session closed.
+2025-08-07 12:44:24,553 - INFO - 127.0.0.1 - - [07/Aug/2025 12:44:24] "POST / HTTP/1.1" 200 -
+2025-08-07 12:44:24,570 - INFO - 127.0.0.1 - - [07/Aug/2025 12:44:24] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 12:44:24,571 - INFO - 127.0.0.1 - - [07/Aug/2025 12:44:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:44:30,637 - ERROR - Error loading dashboard: Could not locate a bind configured on mapper Mapper[CandidateProfile(candidate_profiles)], SQL expression or this Session.
+Traceback (most recent call last):
+  File "/Users/karthik/Desktop/Projects/hiring_tool/app.py", line 148, in dashboard
+    candidates = session.query(CandidateProfile).order_by(CandidateProfile.fit_score.desc()).all()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2693, in all
+    return self._iter().all()  # type: ignore
+           ^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/query.py", line 2847, in _iter
+    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
+                                                  ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2308, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2178, in _execute_internal
+    bind = self.get_bind(**bind_arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2792, in get_bind
+    raise sa_exc.UnboundExecutionError(
+sqlalchemy.exc.UnboundExecutionError: Could not locate a bind configured on mapper Mapper[CandidateProfile(candidate_profiles)], SQL expression or this Session.
+2025-08-07 12:44:30,639 - INFO - Database session closed (dashboard).
+2025-08-07 12:44:30,639 - INFO - 127.0.0.1 - - [07/Aug/2025 12:44:30] "GET /dashboard HTTP/1.1" 200 -
+2025-08-07 12:44:30,648 - INFO - 127.0.0.1 - - [07/Aug/2025 12:44:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:44:32,688 - INFO - 127.0.0.1 - - [07/Aug/2025 12:44:32] "GET / HTTP/1.1" 200 -
+2025-08-07 12:44:32,705 - INFO - 127.0.0.1 - - [07/Aug/2025 12:44:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:44:32,705 - INFO - 127.0.0.1 - - [07/Aug/2025 12:44:32] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 12:46:03,763 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/resume_processor.py', reloading
+2025-08-07 12:46:03,842 - INFO -  * Restarting with stat
+2025-08-07 12:46:04,261 - WARNING -  * Debugger is active!
+2025-08-07 12:46:04,265 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 12:46:29,005 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/resume_processor.py', reloading
+2025-08-07 12:46:29,066 - INFO -  * Restarting with stat
+2025-08-07 12:46:29,346 - WARNING -  * Debugger is active!
+2025-08-07 12:46:29,349 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 12:46:58,063 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-07 12:46:58,063 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-07 12:46:58,063 - INFO -  * Restarting with stat
+2025-08-07 12:46:58,334 - WARNING -  * Debugger is active!
+2025-08-07 12:46:58,338 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 12:47:02,386 - INFO - 127.0.0.1 - - [07/Aug/2025 12:47:02] "GET / HTTP/1.1" 200 -
+2025-08-07 12:47:02,400 - INFO - 127.0.0.1 - - [07/Aug/2025 12:47:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:47:02,401 - INFO - 127.0.0.1 - - [07/Aug/2025 12:47:02] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 12:47:17,699 - INFO - Uploaded resume: resumes/278deb1d-3b09-4bf7-a468-e070604c6d6f_Ram_data_scientist_pdf.pdf
+2025-08-07 12:47:18,383 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-08-07 12:47:18,386 - ERROR - Error processing resumes: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope*******_key. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Traceback (most recent call last):
+  File "/Users/karthik/Desktop/Projects/hiring_tool/app.py", line 83, in upload
+    extracted_data = parse_resume_with_gemini(text)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/resume_processor.py", line 82, in parse_resume_with_openai
+    raw = _call_openai(
+          ^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/resume_processor.py", line 53, in _call_openai
+    response = openai.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1135, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope*******_key. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-08-07 12:47:18,391 - INFO - Database session closed.
+2025-08-07 12:47:18,393 - INFO - 127.0.0.1 - - [07/Aug/2025 12:47:18] "POST / HTTP/1.1" 200 -
+2025-08-07 12:47:18,418 - INFO - 127.0.0.1 - - [07/Aug/2025 12:47:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:47:18,419 - INFO - 127.0.0.1 - - [07/Aug/2025 12:47:18] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 12:48:29,749 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-07 12:48:29,749 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-07 12:48:29,750 - INFO -  * Restarting with stat
+2025-08-07 12:48:30,024 - WARNING -  * Debugger is active!
+2025-08-07 12:48:30,028 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 12:48:56,822 - INFO - 127.0.0.1 - - [07/Aug/2025 12:48:56] "GET / HTTP/1.1" 200 -
+2025-08-07 12:48:56,840 - INFO - 127.0.0.1 - - [07/Aug/2025 12:48:56] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 12:48:56,840 - INFO - 127.0.0.1 - - [07/Aug/2025 12:48:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:48:57,604 - INFO - 127.0.0.1 - - [07/Aug/2025 12:48:57] "GET / HTTP/1.1" 200 -
+2025-08-07 12:48:57,614 - INFO - 127.0.0.1 - - [07/Aug/2025 12:48:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:48:57,615 - INFO - 127.0.0.1 - - [07/Aug/2025 12:48:57] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 12:49:10,977 - INFO - Uploaded resume: resumes/22d2b6bb-e068-4925-9b18-226193384755_Ram_data_scientist_pdf.pdf
+2025-08-07 12:49:11,343 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-08-07 12:49:11,345 - ERROR - Error processing resumes: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope*******_key. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Traceback (most recent call last):
+  File "/Users/karthik/Desktop/Projects/hiring_tool/app.py", line 83, in upload
+    extracted_data = parse_resume_with_gemini(text)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/resume_processor.py", line 82, in parse_resume_with_openai
+    raw = _call_openai(
+          ^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/resume_processor.py", line 53, in _call_openai
+    response = openai.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1150, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope*******_key. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-08-07 12:49:11,351 - INFO - Database session closed.
+2025-08-07 12:49:11,353 - INFO - 127.0.0.1 - - [07/Aug/2025 12:49:11] "POST / HTTP/1.1" 200 -
+2025-08-07 12:49:11,376 - INFO - 127.0.0.1 - - [07/Aug/2025 12:49:11] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 12:49:11,377 - INFO - 127.0.0.1 - - [07/Aug/2025 12:49:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:50:56,609 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-07 12:50:56,609 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-07 12:50:56,609 - INFO -  * Restarting with stat
+2025-08-07 12:50:56,886 - WARNING -  * Debugger is active!
+2025-08-07 12:50:56,891 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 12:51:16,755 - INFO - 127.0.0.1 - - [07/Aug/2025 12:51:16] "GET / HTTP/1.1" 200 -
+2025-08-07 12:51:16,775 - INFO - 127.0.0.1 - - [07/Aug/2025 12:51:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:51:16,776 - INFO - 127.0.0.1 - - [07/Aug/2025 12:51:16] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 12:51:26,570 - INFO - 127.0.0.1 - - [07/Aug/2025 12:51:26] "GET / HTTP/1.1" 200 -
+2025-08-07 12:51:26,578 - INFO - 127.0.0.1 - - [07/Aug/2025 12:51:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:51:26,579 - INFO - 127.0.0.1 - - [07/Aug/2025 12:51:26] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 12:51:27,413 - INFO - 127.0.0.1 - - [07/Aug/2025 12:51:27] "GET / HTTP/1.1" 200 -
+2025-08-07 12:51:27,423 - INFO - 127.0.0.1 - - [07/Aug/2025 12:51:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:51:27,423 - INFO - 127.0.0.1 - - [07/Aug/2025 12:51:27] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 12:51:46,090 - INFO - Uploaded resume: resumes/1fee78e1-8385-469a-afd6-1b68e43203b8_Ram_data_scientist_pdf.pdf
+2025-08-07 12:51:46,516 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-08-07 12:51:46,517 - ERROR - Error processing resumes: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope*******_key. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Traceback (most recent call last):
+  File "/Users/karthik/Desktop/Projects/hiring_tool/app.py", line 83, in upload
+    extracted_data = parse_resume_with_gemini(text)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/resume_processor.py", line 82, in parse_resume_with_openai
+    raw = _call_openai(
+          ^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/resume_processor.py", line 53, in _call_openai
+    response = openai.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1150, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope*******_key. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-08-07 12:51:46,522 - INFO - Database session closed.
+2025-08-07 12:51:46,523 - INFO - 127.0.0.1 - - [07/Aug/2025 12:51:46] "POST / HTTP/1.1" 200 -
+2025-08-07 12:51:46,548 - INFO - 127.0.0.1 - - [07/Aug/2025 12:51:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:51:46,549 - INFO - 127.0.0.1 - - [07/Aug/2025 12:51:46] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 12:53:49,075 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-07 12:53:49,076 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-07 12:53:49,076 - INFO -  * Restarting with stat
+2025-08-07 12:53:49,348 - WARNING -  * Debugger is active!
+2025-08-07 12:53:49,352 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 12:54:13,998 - INFO - 127.0.0.1 - - [07/Aug/2025 12:54:13] "GET / HTTP/1.1" 200 -
+2025-08-07 12:54:14,004 - INFO - 127.0.0.1 - - [07/Aug/2025 12:54:14] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 12:54:14,012 - INFO - 127.0.0.1 - - [07/Aug/2025 12:54:14] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 12:54:14,013 - INFO - 127.0.0.1 - - [07/Aug/2025 12:54:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:54:14,343 - INFO - 127.0.0.1 - - [07/Aug/2025 12:54:14] "GET / HTTP/1.1" 200 -
+2025-08-07 12:54:14,345 - INFO - 127.0.0.1 - - [07/Aug/2025 12:54:14] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 12:54:14,354 - INFO - 127.0.0.1 - - [07/Aug/2025 12:54:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:54:14,355 - INFO - 127.0.0.1 - - [07/Aug/2025 12:54:14] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 12:54:26,629 - INFO - Uploaded resume: resumes/9defc9ff-210b-4171-821c-a61f5e0e112e_Ram_data_scientist_pdf.pdf
+2025-08-07 12:54:27,035 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-08-07 12:54:27,038 - ERROR - Error processing resumes: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope*******_key. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Traceback (most recent call last):
+  File "/Users/karthik/Desktop/Projects/hiring_tool/app.py", line 83, in upload
+    extracted_data = parse_resume_with_gemini(text)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/resume_processor.py", line 82, in parse_resume_with_openai
+    raw = _call_openai(
+          ^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/resume_processor.py", line 53, in _call_openai
+    response = openai.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1150, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope*******_key. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-08-07 12:54:27,043 - INFO - Database session closed.
+2025-08-07 12:54:27,045 - INFO - 127.0.0.1 - - [07/Aug/2025 12:54:27] "POST / HTTP/1.1" 200 -
+2025-08-07 12:54:27,071 - INFO - 127.0.0.1 - - [07/Aug/2025 12:54:27] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 12:54:27,071 - INFO - 127.0.0.1 - - [07/Aug/2025 12:54:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 12:55:15,026 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/resume_processor.py', reloading
+2025-08-07 12:55:15,110 - INFO -  * Restarting with stat
+2025-08-07 12:55:15,541 - WARNING -  * Debugger is active!
+2025-08-07 12:55:15,544 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 12:55:45,439 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/resume_processor.py', reloading
+2025-08-07 12:55:45,514 - INFO -  * Restarting with stat
+2025-08-07 12:55:45,820 - WARNING -  * Debugger is active!
+2025-08-07 12:55:45,824 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 13:42:27,030 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-07 13:42:27,030 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-07 13:42:27,031 - INFO -  * Restarting with stat
+2025-08-07 13:42:27,301 - WARNING -  * Debugger is active!
+2025-08-07 13:42:27,305 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 13:42:53,608 - INFO - 127.0.0.1 - - [07/Aug/2025 13:42:53] "GET / HTTP/1.1" 200 -
+2025-08-07 13:42:53,614 - INFO - 127.0.0.1 - - [07/Aug/2025 13:42:53] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 13:42:53,621 - INFO - 127.0.0.1 - - [07/Aug/2025 13:42:53] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 13:42:53,621 - INFO - 127.0.0.1 - - [07/Aug/2025 13:42:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 13:42:54,319 - INFO - 127.0.0.1 - - [07/Aug/2025 13:42:54] "GET / HTTP/1.1" 200 -
+2025-08-07 13:42:54,321 - INFO - 127.0.0.1 - - [07/Aug/2025 13:42:54] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 13:42:54,330 - INFO - 127.0.0.1 - - [07/Aug/2025 13:42:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 13:42:54,330 - INFO - 127.0.0.1 - - [07/Aug/2025 13:42:54] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 13:43:09,517 - INFO - Uploaded resume: resumes/84818c30-1441-48e8-b064-7dac6839fdc1_Ram_data_scientist_pdf.pdf
+2025-08-07 13:43:09,893 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-08-07 13:43:09,896 - ERROR - Error processing resumes: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope*******_key. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Traceback (most recent call last):
+  File "/Users/karthik/Desktop/Projects/hiring_tool/app.py", line 83, in upload
+    extracted_data = parse_resume_with_gemini(text)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/resume_processor.py", line 83, in parse_resume_with_openai
+    raw = _call_openai(
+          ^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/resume_processor.py", line 54, in _call_openai
+    response = openai.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1150, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope*******_key. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-08-07 13:43:09,901 - INFO - Database session closed.
+2025-08-07 13:43:09,903 - INFO - 127.0.0.1 - - [07/Aug/2025 13:43:09] "POST / HTTP/1.1" 200 -
+2025-08-07 13:43:09,929 - INFO - 127.0.0.1 - - [07/Aug/2025 13:43:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 13:43:09,929 - INFO - 127.0.0.1 - - [07/Aug/2025 13:43:09] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 13:50:39,490 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-07 13:50:39,490 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-07 13:50:39,490 - INFO -  * Restarting with stat
+2025-08-07 13:50:39,768 - WARNING -  * Debugger is active!
+2025-08-07 13:50:39,773 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 13:51:05,861 - INFO - 127.0.0.1 - - [07/Aug/2025 13:51:05] "GET / HTTP/1.1" 200 -
+2025-08-07 13:51:05,866 - INFO - 127.0.0.1 - - [07/Aug/2025 13:51:05] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 13:51:05,875 - INFO - 127.0.0.1 - - [07/Aug/2025 13:51:05] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 13:51:05,876 - INFO - 127.0.0.1 - - [07/Aug/2025 13:51:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 13:51:06,675 - INFO - 127.0.0.1 - - [07/Aug/2025 13:51:06] "GET / HTTP/1.1" 200 -
+2025-08-07 13:51:06,676 - INFO - 127.0.0.1 - - [07/Aug/2025 13:51:06] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 13:51:06,684 - INFO - 127.0.0.1 - - [07/Aug/2025 13:51:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 13:51:06,684 - INFO - 127.0.0.1 - - [07/Aug/2025 13:51:06] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 13:51:20,285 - INFO - Uploaded resume: resumes/f67172ff-be34-4ecb-b428-aee3561193f0_Ram_data_scientist_pdf.pdf
+2025-08-07 13:51:20,641 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-08-07 13:51:20,643 - ERROR - Error processing resumes: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope*******_key. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Traceback (most recent call last):
+  File "/Users/karthik/Desktop/Projects/hiring_tool/app.py", line 83, in upload
+    extracted_data = parse_resume_with_gemini(text)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/resume_processor.py", line 83, in parse_resume_with_openai
+    raw = _call_openai(
+          ^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/resume_processor.py", line 54, in _call_openai
+    response = openai.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1150, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope*******_key. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-08-07 13:51:20,650 - INFO - Database session closed.
+2025-08-07 13:51:20,651 - INFO - 127.0.0.1 - - [07/Aug/2025 13:51:20] "POST / HTTP/1.1" 200 -
+2025-08-07 13:51:20,676 - INFO - 127.0.0.1 - - [07/Aug/2025 13:51:20] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 13:51:20,677 - INFO - 127.0.0.1 - - [07/Aug/2025 13:51:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 13:54:59,350 - INFO - 127.0.0.1 - - [07/Aug/2025 13:54:59] "GET / HTTP/1.1" 200 -
+2025-08-07 13:54:59,352 - INFO - 127.0.0.1 - - [07/Aug/2025 13:54:59] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 13:54:59,365 - INFO - 127.0.0.1 - - [07/Aug/2025 13:54:59] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 13:54:59,365 - INFO - 127.0.0.1 - - [07/Aug/2025 13:54:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 13:55:02,845 - INFO - 127.0.0.1 - - [07/Aug/2025 13:55:02] "GET / HTTP/1.1" 200 -
+2025-08-07 13:55:02,847 - INFO - 127.0.0.1 - - [07/Aug/2025 13:55:02] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 13:55:02,854 - INFO - 127.0.0.1 - - [07/Aug/2025 13:55:02] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 13:55:02,854 - INFO - 127.0.0.1 - - [07/Aug/2025 13:55:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 13:55:10,108 - INFO - Uploaded resume: resumes/eb393119-98e9-4954-bcea-cd2a48ec363c_Ram_data_scientist_pdf.pdf
+2025-08-07 13:55:11,219 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 503 Service Unavailable"
+2025-08-07 13:55:11,220 - INFO - Retrying request to /chat/completions in 0.493887 seconds
+2025-08-07 13:55:11,868 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-08-07 13:55:11,870 - ERROR - Error processing resumes: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope*******_key. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+Traceback (most recent call last):
+  File "/Users/karthik/Desktop/Projects/hiring_tool/app.py", line 83, in upload
+    extracted_data = parse_resume_with_gemini(text)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/resume_processor.py", line 83, in parse_resume_with_openai
+    raw = _call_openai(
+          ^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/resume_processor.py", line 54, in _call_openai
+    response = openai.chat.completions.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/_utils/_utils.py", line 287, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1150, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1259, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/openai/_base_client.py", line 1047, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Error code: 401 - {'error': {'message': 'Incorrect API key provided: your_ope*******_key. You can find your API key at https://platform.openai.com/account/api-keys.', 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_api_key'}}
+2025-08-07 13:55:11,871 - INFO - Database session closed.
+2025-08-07 13:55:11,872 - INFO - 127.0.0.1 - - [07/Aug/2025 13:55:11] "POST / HTTP/1.1" 200 -
+2025-08-07 13:55:11,896 - INFO - 127.0.0.1 - - [07/Aug/2025 13:55:11] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 13:55:11,896 - INFO - 127.0.0.1 - - [07/Aug/2025 13:55:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 14:01:35,065 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-07 14:01:35,066 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-07 14:01:35,066 - INFO -  * Restarting with stat
+2025-08-07 14:01:35,354 - WARNING -  * Debugger is active!
+2025-08-07 14:01:35,359 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 14:07:07,527 - INFO - 127.0.0.1 - - [07/Aug/2025 14:07:07] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-08-07 14:07:08,911 - INFO - 127.0.0.1 - - [07/Aug/2025 14:07:08] "GET /login HTTP/1.1" 200 -
+2025-08-07 14:07:08,923 - INFO - 127.0.0.1 - - [07/Aug/2025 14:07:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 14:07:28,715 - INFO - Login attempt: username=admin, password=admin123
+2025-08-07 14:07:28,715 - INFO - Expected credentials: username=admin, password=admin123
+2025-08-07 14:07:28,715 - INFO - User admin logged in successfully.
+2025-08-07 14:07:28,716 - INFO - 127.0.0.1 - - [07/Aug/2025 14:07:28] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-07 14:07:28,746 - INFO - 127.0.0.1 - - [07/Aug/2025 14:07:28] "GET / HTTP/1.1" 200 -
+2025-08-07 14:07:28,758 - INFO - 127.0.0.1 - - [07/Aug/2025 14:07:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 14:07:28,758 - INFO - 127.0.0.1 - - [07/Aug/2025 14:07:28] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 14:07:44,509 - INFO - Uploaded resume: resumes/e03049a8-ec8c-46d0-b395-fad683e6468c_Ram_data_scientist_pdf.pdf
+2025-08-07 14:07:49,280 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 14:07:49,299 - INFO - Candidate data and resumes committed to database.
+2025-08-07 14:07:53,167 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 14:07:53,168 - INFO - Ranking candidates.
+2025-08-07 14:07:53,170 - ERROR - Error processing resumes: 'fit_score'
+Traceback (most recent call last):
+  File "/Users/karthik/Desktop/Projects/hiring_tool/app.py", line 117, in upload
+    profile.fit_score = ranking['fit_score']
+                        ~~~~~~~^^^^^^^^^^^^^
+KeyError: 'fit_score'
+2025-08-07 14:07:53,171 - INFO - Database session closed.
+2025-08-07 14:07:53,171 - INFO - 127.0.0.1 - - [07/Aug/2025 14:07:53] "POST / HTTP/1.1" 200 -
+2025-08-07 14:07:53,190 - INFO - 127.0.0.1 - - [07/Aug/2025 14:07:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 14:07:53,190 - INFO - 127.0.0.1 - - [07/Aug/2025 14:07:53] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 14:09:28,116 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/app.py', reloading
+2025-08-07 14:09:28,211 - INFO -  * Restarting with stat
+2025-08-07 14:09:28,664 - WARNING -  * Debugger is active!
+2025-08-07 14:09:28,668 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 14:09:44,157 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/app.py', reloading
+2025-08-07 14:09:44,224 - INFO -  * Restarting with stat
+2025-08-07 14:09:44,512 - WARNING -  * Debugger is active!
+2025-08-07 14:09:44,515 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 14:10:04,206 - INFO - Uploaded resume: resumes/63062216-3728-4cfb-a1cf-09c422f15df5_Ram_data_scientist_pdf.pdf
+2025-08-07 14:10:09,570 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 14:10:09,586 - INFO - Candidate data and resumes committed to database.
+2025-08-07 14:10:13,769 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 14:10:13,771 - INFO - Ranking candidates.
+2025-08-07 14:10:13,780 - ERROR - Ranking for resume_id 63062216-3728-4cfb-a1cf-09c422f15df5 missing 'fit_score'. Full object: {'resume_id': '63062216-3728-4cfb-a1cf-09c422f15df5', 'fit_for_job': True, 'reasons': ['Candidate has expertise in multiple programming languages including Python, R, and Java.', 'Experience with data analytics tools such as Tableau and Alteryx.', 'Practical experience with Big Data technologies like Apache Hadoop.', 'Experience in data extraction, engineering, cleansing, analysis, and visualization.', 'Projects demonstrate practical application of skills in data analysis and machine learning.']}
+2025-08-07 14:10:13,783 - INFO - Candidate rankings committed to database.
+2025-08-07 14:10:13,783 - INFO - Redirecting to dashboard.
+2025-08-07 14:10:13,783 - INFO - Database session closed.
+2025-08-07 14:10:13,784 - INFO - 127.0.0.1 - - [07/Aug/2025 14:10:13] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-08-07 14:10:13,796 - INFO - Loaded candidates for dashboard.
+2025-08-07 14:10:13,796 - INFO - Rendering dashboard.
+2025-08-07 14:10:13,801 - INFO - Database session closed (dashboard).
+2025-08-07 14:10:13,802 - INFO - 127.0.0.1 - - [07/Aug/2025 14:10:13] "GET /dashboard HTTP/1.1" 200 -
+2025-08-07 14:10:13,815 - INFO - 127.0.0.1 - - [07/Aug/2025 14:10:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 14:13:36,696 - INFO - Uploaded resume: resumes/a98b611e-e4c4-43d2-b834-dd55ae1692de_Ram_data_scientist_pdf.pdf
+2025-08-07 14:13:40,308 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 14:13:40,314 - INFO - Candidate data and resumes committed to database.
+2025-08-07 14:13:41,946 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 14:13:41,948 - INFO - Ranking candidates.
+2025-08-07 14:13:41,950 - ERROR - Ranking for resume_id a98b611e-e4c4-43d2-b834-dd55ae1692de missing 'fit_score'. Full object: {'resume_id': 'a98b611e-e4c4-43d2-b834-dd55ae1692de', 'fit_for_job': True}
+2025-08-07 14:13:41,953 - INFO - Candidate rankings committed to database.
+2025-08-07 14:13:41,953 - INFO - Redirecting to dashboard.
+2025-08-07 14:13:41,953 - INFO - Database session closed.
+2025-08-07 14:13:41,953 - INFO - 127.0.0.1 - - [07/Aug/2025 14:13:41] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-08-07 14:13:43,428 - INFO - Loaded candidates for dashboard.
+2025-08-07 14:13:43,429 - INFO - Rendering dashboard.
+2025-08-07 14:13:43,434 - INFO - Database session closed (dashboard).
+2025-08-07 14:13:43,435 - INFO - 127.0.0.1 - - [07/Aug/2025 14:13:43] "GET /dashboard HTTP/1.1" 200 -
+2025-08-07 14:13:43,448 - INFO - 127.0.0.1 - - [07/Aug/2025 14:13:43] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-07 14:13:53,472 - INFO - 127.0.0.1 - - [07/Aug/2025 14:13:53] "GET / HTTP/1.1" 200 -
+2025-08-07 14:13:53,474 - INFO - 127.0.0.1 - - [07/Aug/2025 14:13:53] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 14:13:53,482 - INFO - 127.0.0.1 - - [07/Aug/2025 14:13:53] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 14:13:53,482 - INFO - 127.0.0.1 - - [07/Aug/2025 14:13:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 14:14:19,110 - INFO - Uploaded resume: resumes/70c80551-d703-4bd3-be4d-b6a9e0ae1eba_Jon_data_scientist_resume.pdf
+2025-08-07 14:14:21,987 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 14:14:21,990 - INFO - Uploaded resume: resumes/65fd7502-1415-4002-bc8d-ac15f46eedf8_Ram_data_scientist_pdf.pdf
+2025-08-07 14:14:26,390 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 14:14:26,397 - INFO - Candidate data and resumes committed to database.
+2025-08-07 14:14:29,153 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 14:14:29,155 - INFO - Ranking candidates.
+2025-08-07 14:14:29,158 - ERROR - Ranking for resume_id 65fd7502-1415-4002-bc8d-ac15f46eedf8 missing 'fit_score'. Full object: {'resume_id': '65fd7502-1415-4002-bc8d-ac15f46eedf8', 'fit_for_job': True, 'reason': 'The candidate holds a relevant degree, has over 5 years of experience, and possesses skills in Python, R, Java, and big data technologies like Apache Hadoop. They also have experience in data science and machine learning techniques, which aligns well with the job requirements.'}
+2025-08-07 14:14:29,160 - ERROR - Ranking for resume_id 70c80551-d703-4bd3-be4d-b6a9e0ae1eba missing 'fit_score'. Full object: {'resume_id': '70c80551-d703-4bd3-be4d-b6a9e0ae1eba', 'fit_for_job': False, 'reason': "The candidate lacks a Master's or PhD degree in a quantitative discipline and does not have experience with big data technologies or machine learning, which are essential for the role."}
+2025-08-07 14:14:29,162 - INFO - Candidate rankings committed to database.
+2025-08-07 14:14:29,162 - INFO - Redirecting to dashboard.
+2025-08-07 14:14:29,162 - INFO - Database session closed.
+2025-08-07 14:14:29,162 - INFO - 127.0.0.1 - - [07/Aug/2025 14:14:29] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-08-07 14:14:29,172 - INFO - Loaded candidates for dashboard.
+2025-08-07 14:14:29,172 - INFO - Rendering dashboard.
+2025-08-07 14:14:29,172 - INFO - Database session closed (dashboard).
+2025-08-07 14:14:29,172 - INFO - 127.0.0.1 - - [07/Aug/2025 14:14:29] "GET /dashboard HTTP/1.1" 200 -
+2025-08-07 14:14:29,192 - INFO - 127.0.0.1 - - [07/Aug/2025 14:14:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 14:22:21,712 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/app.py', reloading
+2025-08-07 14:22:21,801 - INFO -  * Restarting with stat
+2025-08-07 14:22:22,257 - WARNING -  * Debugger is active!
+2025-08-07 14:22:22,261 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 14:22:29,508 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/models.py', reloading
+2025-08-07 14:22:29,584 - INFO -  * Restarting with stat
+2025-08-07 14:22:29,887 - WARNING -  * Debugger is active!
+2025-08-07 14:22:29,894 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 14:23:49,280 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/app.py', reloading
+2025-08-07 14:23:49,345 - INFO -  * Restarting with stat
+2025-08-07 14:23:49,761 - WARNING -  * Debugger is active!
+2025-08-07 14:23:49,765 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 14:24:22,138 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-07 14:24:22,138 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-07 14:24:22,139 - INFO -  * Restarting with stat
+2025-08-07 14:24:22,422 - WARNING -  * Debugger is active!
+2025-08-07 14:24:22,427 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 14:24:28,924 - INFO - Loaded candidates for dashboard.
+2025-08-07 14:24:28,924 - INFO - Rendering dashboard.
+2025-08-07 14:24:28,931 - INFO - Database session closed (dashboard).
+2025-08-07 14:24:28,931 - INFO - 127.0.0.1 - - [07/Aug/2025 14:24:28] "GET /dashboard HTTP/1.1" 200 -
+2025-08-07 14:24:28,944 - INFO - 127.0.0.1 - - [07/Aug/2025 14:24:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 14:24:32,621 - INFO - 127.0.0.1 - - [07/Aug/2025 14:24:32] "GET / HTTP/1.1" 200 -
+2025-08-07 14:24:32,624 - INFO - 127.0.0.1 - - [07/Aug/2025 14:24:32] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 14:24:32,636 - INFO - 127.0.0.1 - - [07/Aug/2025 14:24:32] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 14:24:32,636 - INFO - 127.0.0.1 - - [07/Aug/2025 14:24:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 14:24:49,210 - INFO - Old candidate and resume records cleared.
+2025-08-07 14:24:49,211 - INFO - Uploaded resume: resumes/dca92980-2860-435f-be5f-44baadd604f0_Jon_data_scientist_resume.pdf
+2025-08-07 14:24:52,881 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 14:24:52,892 - INFO - Uploaded resume: resumes/70297f63-f81b-4e25-9c91-7186fefd5068_Ram_data_scientist_pdf.pdf
+2025-08-07 14:24:58,716 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 14:24:58,726 - INFO - Candidate data and resumes committed to database.
+2025-08-07 14:25:02,400 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 14:25:02,403 - INFO - Ranking candidates.
+2025-08-07 14:25:02,413 - INFO - Candidate rankings committed to database.
+2025-08-07 14:25:02,413 - INFO - Redirecting to dashboard.
+2025-08-07 14:25:02,414 - INFO - Database session closed.
+2025-08-07 14:25:02,414 - INFO - 127.0.0.1 - - [07/Aug/2025 14:25:02] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-08-07 14:25:02,426 - INFO - Loaded candidates for dashboard.
+2025-08-07 14:25:02,426 - INFO - Rendering dashboard.
+2025-08-07 14:25:02,426 - INFO - Database session closed (dashboard).
+2025-08-07 14:25:02,426 - INFO - 127.0.0.1 - - [07/Aug/2025 14:25:02] "GET /dashboard HTTP/1.1" 200 -
+2025-08-07 14:25:02,446 - INFO - 127.0.0.1 - - [07/Aug/2025 14:25:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 14:28:58,866 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/app.py', reloading
+2025-08-07 14:28:58,938 - INFO -  * Restarting with stat
+2025-08-07 14:28:59,370 - WARNING -  * Debugger is active!
+2025-08-07 14:28:59,375 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 14:29:15,910 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/resume_processor.py', reloading
+2025-08-07 14:29:15,984 - INFO -  * Restarting with stat
+2025-08-07 14:29:16,303 - WARNING -  * Debugger is active!
+2025-08-07 14:29:16,307 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 14:29:56,543 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/resume_processor.py', reloading
+2025-08-07 14:29:56,621 - INFO -  * Restarting with stat
+2025-08-07 14:29:57,050 - WARNING -  * Debugger is active!
+2025-08-07 14:29:57,056 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 14:30:04,631 - INFO - Loaded candidates for dashboard.
+2025-08-07 14:30:04,633 - INFO - Rendering dashboard.
+2025-08-07 14:30:04,639 - INFO - Database session closed (dashboard).
+2025-08-07 14:30:04,640 - INFO - 127.0.0.1 - - [07/Aug/2025 14:30:04] "GET /dashboard HTTP/1.1" 200 -
+2025-08-07 14:30:04,649 - INFO - 127.0.0.1 - - [07/Aug/2025 14:30:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 14:30:18,488 - INFO - 127.0.0.1 - - [07/Aug/2025 14:30:18] "[33mGET /resumes/70297f63-f81b-4e25-9c91-7186fefd5068_Ram_data_scientist_pdf.pdf HTTP/1.1[0m" 404 -
+2025-08-07 14:30:49,508 - INFO - 127.0.0.1 - - [07/Aug/2025 14:30:49] "[33mGET /resumes/dca92980-2860-435f-be5f-44baadd604f0_Jon_data_scientist_resume.pdf HTTP/1.1[0m" 404 -
+2025-08-07 14:31:34,162 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/app.py', reloading
+2025-08-07 14:31:34,238 - INFO -  * Restarting with stat
+2025-08-07 14:55:26,805 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-07 14:55:26,806 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-07 14:55:26,806 - INFO -  * Restarting with stat
+2025-08-07 14:55:27,087 - WARNING -  * Debugger is active!
+2025-08-07 14:55:27,093 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 14:55:50,425 - INFO - 127.0.0.1 - - [07/Aug/2025 14:55:50] "GET / HTTP/1.1" 200 -
+2025-08-07 14:55:50,430 - INFO - 127.0.0.1 - - [07/Aug/2025 14:55:50] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 14:55:50,432 - INFO - 127.0.0.1 - - [07/Aug/2025 14:55:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 14:56:12,008 - INFO - Saved resume: resumes/9362e1fd-7bd5-481a-b2e9-6d5abd8a4eb2_Jon_data_scientist_resume.pdf
+2025-08-07 14:56:19,078 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 14:56:19,091 - INFO - Saved resume: resumes/0b43ee64-b037-477a-844d-4044ae157479_Ram_data_scientist_pdf.pdf
+2025-08-07 14:56:27,471 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 14:56:27,475 - ERROR - Error processing resumes: Could not locate a bind configured on mapper Mapper[Resume(resumes)] or this Session.
+Traceback (most recent call last):
+  File "/Users/karthik/Desktop/Projects/hiring_tool/app.py", line 119, in upload
+    session_db.commit()
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1969, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1256, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 1231, in _prepare_impl
+    self.session.flush()
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4312, in flush
+    self._flush(objects)
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4447, in _flush
+    with util.safe_reraise():
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 4408, in _flush
+    flush_context.execute()
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 60, in save_obj
+    for (
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 221, in _organize_states_for_save
+    for state, dict_, mapper, connection in _connections_for_states(
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/persistence.py", line 1726, in _connections_for_states
+    connection = uowtransaction.transaction.connection(base_mapper)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 2, in connection
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 994, in connection
+    bind = self.session.get_bind(bindkey, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/sqlalchemy/orm/session.py", line 2792, in get_bind
+    raise sa_exc.UnboundExecutionError(
+sqlalchemy.exc.UnboundExecutionError: Could not locate a bind configured on mapper Mapper[Resume(resumes)] or this Session.
+2025-08-07 14:56:27,484 - INFO - Database session closed.
+2025-08-07 14:56:27,484 - INFO - 127.0.0.1 - - [07/Aug/2025 14:56:27] "POST / HTTP/1.1" 200 -
+2025-08-07 14:56:27,508 - INFO - 127.0.0.1 - - [07/Aug/2025 14:56:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 14:56:27,508 - INFO - 127.0.0.1 - - [07/Aug/2025 14:56:27] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 14:58:32,908 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/app.py', reloading
+2025-08-07 14:58:33,001 - INFO -  * Restarting with stat
+2025-08-07 14:58:33,460 - WARNING -  * Debugger is active!
+2025-08-07 14:58:33,464 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 14:58:41,033 - INFO - Saved resume: resumes/3c7e1ea5-ab7b-4fe3-9be0-ea416c460ebc_Jon_data_scientist_resume.pdf
+2025-08-07 14:58:44,200 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 14:58:44,218 - INFO - Saved resume: resumes/434caafb-02b2-4abd-b87c-002eb61ac42f_Ram_data_scientist_pdf.pdf
+2025-08-07 14:58:48,682 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 14:58:48,694 - INFO - All resumes processed and saved.
+2025-08-07 14:58:52,470 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 14:58:52,471 - INFO - Ranking candidates.
+2025-08-07 14:58:52,477 - INFO - Candidate rankings committed to database.
+2025-08-07 14:58:52,477 - INFO - Redirecting to dashboard.
+2025-08-07 14:58:52,478 - INFO - Database session closed.
+2025-08-07 14:58:52,478 - INFO - 127.0.0.1 - - [07/Aug/2025 14:58:52] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-08-07 14:59:04,505 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-07 14:59:04,505 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-07 14:59:04,505 - INFO -  * Restarting with stat
+2025-08-07 14:59:04,789 - WARNING -  * Debugger is active!
+2025-08-07 14:59:04,793 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 14:59:18,990 - INFO - 127.0.0.1 - - [07/Aug/2025 14:59:18] "GET / HTTP/1.1" 200 -
+2025-08-07 14:59:18,998 - INFO - 127.0.0.1 - - [07/Aug/2025 14:59:18] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 14:59:18,998 - INFO - 127.0.0.1 - - [07/Aug/2025 14:59:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 14:59:19,004 - INFO - 127.0.0.1 - - [07/Aug/2025 14:59:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 14:59:19,004 - INFO - 127.0.0.1 - - [07/Aug/2025 14:59:19] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 14:59:19,283 - INFO - 127.0.0.1 - - [07/Aug/2025 14:59:19] "GET / HTTP/1.1" 200 -
+2025-08-07 14:59:19,287 - INFO - 127.0.0.1 - - [07/Aug/2025 14:59:19] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 14:59:19,287 - INFO - 127.0.0.1 - - [07/Aug/2025 14:59:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 14:59:19,293 - INFO - 127.0.0.1 - - [07/Aug/2025 14:59:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 14:59:19,294 - INFO - 127.0.0.1 - - [07/Aug/2025 14:59:19] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 14:59:30,713 - INFO - Saved resume: resumes/acb8e3ae-2ce4-42d5-a8a0-1362b904e85e_Jon_data_scientist_resume.pdf
+2025-08-07 14:59:32,854 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 14:59:32,866 - INFO - Saved resume: resumes/664ff6c0-673b-4fe5-b791-a32e8dfe8305_Ram_data_scientist_pdf.pdf
+2025-08-07 14:59:37,731 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 14:59:37,741 - INFO - All resumes processed and saved.
+2025-08-07 14:59:41,828 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 14:59:41,831 - INFO - Ranking candidates.
+2025-08-07 14:59:41,842 - INFO - Candidate rankings committed to database.
+2025-08-07 14:59:41,842 - INFO - Redirecting to dashboard.
+2025-08-07 14:59:41,842 - INFO - Database session closed.
+2025-08-07 14:59:41,843 - INFO - 127.0.0.1 - - [07/Aug/2025 14:59:41] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-08-07 14:59:41,853 - INFO - Loaded candidates for dashboard
+2025-08-07 14:59:41,859 - ERROR - Error loading dashboard: 'dict object' has no attribute 'resume_path'
+Traceback (most recent call last):
+  File "/Users/karthik/Desktop/Projects/hiring_tool/app.py", line 191, in dashboard
+    return render_template('dashboard.html', candidates=candidates_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/karthik/Desktop/Projects/hiring_tool/templates/dashboard.html", line 48, in top-level template code
+    <a href="/resumes/{{ candidate.resume_path.split('/')[-1] }}" class="btn btn-sm btn-outline-primary ms-2" download>Download Resume</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'resume_path'
+2025-08-07 14:59:41,861 - INFO - Database session closed (dashboard).
+2025-08-07 14:59:41,862 - INFO - 127.0.0.1 - - [07/Aug/2025 14:59:41] "GET /dashboard HTTP/1.1" 200 -
+2025-08-07 14:59:41,881 - INFO - 127.0.0.1 - - [07/Aug/2025 14:59:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 15:03:30,263 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/app.py', reloading
+2025-08-07 15:03:30,370 - INFO -  * Restarting with stat
+2025-08-07 15:03:30,822 - WARNING -  * Debugger is active!
+2025-08-07 15:03:30,828 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 15:06:22,957 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/app.py', reloading
+2025-08-07 15:06:23,036 - INFO -  * Restarting with stat
+2025-08-07 15:06:23,487 - WARNING -  * Debugger is active!
+2025-08-07 15:06:23,492 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 15:08:38,487 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/app.py', reloading
+2025-08-07 15:08:38,559 - INFO -  * Restarting with stat
+2025-08-07 15:08:38,847 - WARNING -  * Debugger is active!
+2025-08-07 15:08:38,851 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 15:08:46,067 - INFO - Loaded candidates for dashboard
+2025-08-07 15:08:46,077 - ERROR - Error loading dashboard: 'dict object' has no attribute 'resume_path'
+Traceback (most recent call last):
+  File "/Users/karthik/Desktop/Projects/hiring_tool/app.py", line 169, in dashboard
+    return render_template('dashboard.html', candidates=candidates_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/karthik/Desktop/Projects/hiring_tool/templates/dashboard.html", line 48, in top-level template code
+    <a href="/resumes/{{ candidate.resume_path.split('/')[-1] }}" class="btn btn-sm btn-outline-primary ms-2" download>Download Resume</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'resume_path'
+2025-08-07 15:08:46,078 - INFO - Database session closed (dashboard).
+2025-08-07 15:08:46,079 - INFO - 127.0.0.1 - - [07/Aug/2025 15:08:46] "GET /dashboard HTTP/1.1" 200 -
+2025-08-07 15:08:46,088 - INFO - 127.0.0.1 - - [07/Aug/2025 15:08:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 15:08:48,882 - INFO - 127.0.0.1 - - [07/Aug/2025 15:08:48] "GET / HTTP/1.1" 200 -
+2025-08-07 15:08:48,887 - INFO - 127.0.0.1 - - [07/Aug/2025 15:08:48] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 15:08:48,887 - INFO - 127.0.0.1 - - [07/Aug/2025 15:08:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 15:08:48,899 - INFO - 127.0.0.1 - - [07/Aug/2025 15:08:48] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 15:08:48,899 - INFO - 127.0.0.1 - - [07/Aug/2025 15:08:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 15:09:20,957 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-07 15:09:20,957 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-07 15:09:20,957 - INFO -  * Restarting with stat
+2025-08-07 15:09:21,231 - WARNING -  * Debugger is active!
+2025-08-07 15:09:21,241 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 15:09:36,403 - INFO - 127.0.0.1 - - [07/Aug/2025 15:09:36] "GET / HTTP/1.1" 200 -
+2025-08-07 15:09:36,411 - INFO - 127.0.0.1 - - [07/Aug/2025 15:09:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 15:09:36,411 - INFO - 127.0.0.1 - - [07/Aug/2025 15:09:36] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 15:09:36,414 - INFO - 127.0.0.1 - - [07/Aug/2025 15:09:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 15:09:36,415 - INFO - 127.0.0.1 - - [07/Aug/2025 15:09:36] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 15:09:48,916 - INFO - Saved resume: resumes/51bce4c1-7f7c-4579-8581-b1922c744ca4_Jon_data_scientist_resume.pdf
+2025-08-07 15:09:51,011 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 15:09:51,022 - INFO - Saved resume: resumes/4adeb310-1bac-4ba9-9709-a1f9c441120c_Ram_data_scientist_pdf.pdf
+2025-08-07 15:09:55,104 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 15:09:55,116 - INFO - All resumes processed and saved.
+2025-08-07 15:09:59,201 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 15:09:59,203 - INFO - Ranking candidates.
+2025-08-07 15:09:59,214 - INFO - Candidate rankings committed to database.
+2025-08-07 15:09:59,214 - INFO - Redirecting to dashboard.
+2025-08-07 15:09:59,214 - INFO - Database session closed.
+2025-08-07 15:09:59,214 - INFO - 127.0.0.1 - - [07/Aug/2025 15:09:59] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-08-07 15:09:59,225 - INFO - Loaded candidates for dashboard
+2025-08-07 15:09:59,232 - ERROR - Error loading dashboard: 'dict object' has no attribute 'resume_path'
+Traceback (most recent call last):
+  File "/Users/karthik/Desktop/Projects/hiring_tool/app.py", line 169, in dashboard
+    return render_template('dashboard.html', candidates=candidates_data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/flask/templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/flask/templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/karthik/Desktop/Projects/hiring_tool/templates/dashboard.html", line 48, in top-level template code
+    <a href="/resumes/{{ candidate.resume_path.split('/')[-1] }}" class="btn btn-sm btn-outline-primary ms-2" download>Download Resume</a>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karthik/Desktop/Projects/hiring_tool/venv/lib/python3.11/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'resume_path'
+2025-08-07 15:09:59,234 - INFO - Database session closed (dashboard).
+2025-08-07 15:09:59,234 - INFO - 127.0.0.1 - - [07/Aug/2025 15:09:59] "GET /dashboard HTTP/1.1" 200 -
+2025-08-07 15:09:59,254 - INFO - 127.0.0.1 - - [07/Aug/2025 15:09:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 15:10:33,509 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/app.py', reloading
+2025-08-07 15:10:33,610 - INFO -  * Restarting with stat
+2025-08-07 15:10:34,058 - WARNING -  * Debugger is active!
+2025-08-07 15:10:34,062 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 15:10:50,565 - INFO -  * Detected change in '/Users/karthik/Desktop/Projects/hiring_tool/app.py', reloading
+2025-08-07 15:10:50,632 - INFO -  * Restarting with stat
+2025-08-07 15:10:50,919 - WARNING -  * Debugger is active!
+2025-08-07 15:10:50,922 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 15:11:07,966 - INFO - 127.0.0.1 - - [07/Aug/2025 15:11:07] "GET / HTTP/1.1" 200 -
+2025-08-07 15:11:07,976 - INFO - 127.0.0.1 - - [07/Aug/2025 15:11:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 15:11:07,976 - INFO - 127.0.0.1 - - [07/Aug/2025 15:11:07] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 15:11:07,983 - INFO - 127.0.0.1 - - [07/Aug/2025 15:11:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 15:11:07,984 - INFO - 127.0.0.1 - - [07/Aug/2025 15:11:07] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 15:11:11,407 - INFO - 127.0.0.1 - - [07/Aug/2025 15:11:11] "GET / HTTP/1.1" 200 -
+2025-08-07 15:11:11,410 - INFO - 127.0.0.1 - - [07/Aug/2025 15:11:11] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-08-07 15:11:11,410 - INFO - 127.0.0.1 - - [07/Aug/2025 15:11:11] "GET /static/js/script.js HTTP/1.1" 200 -
+2025-08-07 15:11:11,415 - INFO - 127.0.0.1 - - [07/Aug/2025 15:11:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 15:11:11,415 - INFO - 127.0.0.1 - - [07/Aug/2025 15:11:11] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 15:11:20,329 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-07 15:11:20,329 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-07 15:11:20,329 - INFO -  * Restarting with stat
+2025-08-07 15:11:20,604 - WARNING -  * Debugger is active!
+2025-08-07 15:11:20,608 - INFO -  * Debugger PIN: 575-086-394
+2025-08-07 15:11:29,295 - INFO - 127.0.0.1 - - [07/Aug/2025 15:11:29] "GET / HTTP/1.1" 200 -
+2025-08-07 15:11:29,308 - INFO - 127.0.0.1 - - [07/Aug/2025 15:11:29] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-07 15:11:29,309 - INFO - 127.0.0.1 - - [07/Aug/2025 15:11:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-07 15:11:41,266 - INFO - Saved resume: resumes/a7d0dc69-abbb-461a-ae81-76bd4c9b275f_Jon_data_scientist_resume.pdf
+2025-08-07 15:11:43,039 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 15:11:43,051 - INFO - Saved resume: resumes/4f9c3f68-b7a8-4563-ae90-07a3c0678d2d_Ram_data_scientist_pdf.pdf
+2025-08-07 15:11:47,548 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 15:11:47,556 - INFO - All resumes processed and saved.
+2025-08-07 15:12:04,650 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-07 15:12:04,652 - INFO - Ranking candidates.
+2025-08-07 15:12:04,666 - INFO - Candidate rankings committed to database.
+2025-08-07 15:12:04,666 - INFO - Redirecting to dashboard.
+2025-08-07 15:12:04,666 - INFO - Database session closed.
+2025-08-07 15:12:04,667 - INFO - 127.0.0.1 - - [07/Aug/2025 15:12:04] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-08-07 15:12:04,680 - INFO - Loaded candidates for dashboard
+2025-08-07 15:12:04,691 - INFO - Database session closed (dashboard).
+2025-08-07 15:12:04,692 - INFO - 127.0.0.1 - - [07/Aug/2025 15:12:04] "GET /dashboard HTTP/1.1" 200 -
+2025-08-07 15:12:04,714 - INFO - 127.0.0.1 - - [07/Aug/2025 15:12:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-08 10:35:19,585 - INFO - 127.0.0.1 - - [08/Aug/2025 10:35:19] "GET / HTTP/1.1" 200 -
+2025-08-08 10:35:19,589 - INFO - 127.0.0.1 - - [08/Aug/2025 10:35:19] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-08 10:35:19,589 - INFO - 127.0.0.1 - - [08/Aug/2025 10:35:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-08 10:35:19,596 - INFO - 127.0.0.1 - - [08/Aug/2025 10:35:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-08 10:35:19,596 - INFO - 127.0.0.1 - - [08/Aug/2025 10:35:19] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-08 10:35:33,541 - INFO - Loaded candidates for dashboard
+2025-08-08 10:35:33,552 - INFO - Database session closed (dashboard).
+2025-08-08 10:35:33,553 - INFO - 127.0.0.1 - - [08/Aug/2025 10:35:33] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 10:35:33,569 - INFO - 127.0.0.1 - - [08/Aug/2025 10:35:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-08 10:37:31,568 - INFO - 127.0.0.1 - - [08/Aug/2025 10:37:31] "GET / HTTP/1.1" 200 -
+2025-08-08 10:37:31,572 - INFO - 127.0.0.1 - - [08/Aug/2025 10:37:31] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-08 10:37:31,572 - INFO - 127.0.0.1 - - [08/Aug/2025 10:37:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-08 10:37:31,580 - INFO - 127.0.0.1 - - [08/Aug/2025 10:37:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-08 10:37:31,581 - INFO - 127.0.0.1 - - [08/Aug/2025 10:37:31] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-08 10:38:16,193 - INFO - Loaded candidates for dashboard
+2025-08-08 10:38:16,201 - INFO - Database session closed (dashboard).
+2025-08-08 10:38:16,202 - INFO - 127.0.0.1 - - [08/Aug/2025 10:38:16] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 10:38:16,211 - INFO - 127.0.0.1 - - [08/Aug/2025 10:38:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-08 10:40:05,197 - INFO - 127.0.0.1 - - [08/Aug/2025 10:40:05] "GET / HTTP/1.1" 200 -
+2025-08-08 10:40:05,201 - INFO - 127.0.0.1 - - [08/Aug/2025 10:40:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-08 10:40:05,202 - INFO - 127.0.0.1 - - [08/Aug/2025 10:40:05] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-08 10:40:05,213 - INFO - 127.0.0.1 - - [08/Aug/2025 10:40:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-08 10:40:05,213 - INFO - 127.0.0.1 - - [08/Aug/2025 10:40:05] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-08 10:40:22,178 - INFO - Loaded candidates for dashboard
+2025-08-08 10:40:22,183 - INFO - Database session closed (dashboard).
+2025-08-08 10:40:22,183 - INFO - 127.0.0.1 - - [08/Aug/2025 10:40:22] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 10:40:22,194 - INFO - 127.0.0.1 - - [08/Aug/2025 10:40:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-08 17:09:43,494 - INFO - 127.0.0.1 - - [08/Aug/2025 17:09:43] "GET / HTTP/1.1" 200 -
+2025-08-08 17:09:43,499 - INFO - 127.0.0.1 - - [08/Aug/2025 17:09:43] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-08 17:09:43,499 - INFO - 127.0.0.1 - - [08/Aug/2025 17:09:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-08-08 17:09:43,511 - INFO - 127.0.0.1 - - [08/Aug/2025 17:09:43] "[36mGET /static/js/script.js HTTP/1.1[0m" 304 -
+2025-08-08 17:09:43,511 - INFO - 127.0.0.1 - - [08/Aug/2025 17:09:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
