@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+venv/
+.env
+
+# Logs
+*.log
+
+# Database
+*.db
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Resumes (if you don't want to commit actual resume files)
+resumes/
+
+# Static cache
+static/cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Others
+*.bak
+*.tmp
