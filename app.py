@@ -1,5 +1,3 @@
-
-
 import os
 import re
 import uuid
@@ -10,7 +8,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 from sqlalchemy.orm import Session
 from dotenv import load_dotenv, find_dotenv
 from models import Resume, CandidateProfile, engine, Session
-from resume_processor import extract_text, parse_resume_with_gemini, rank_candidates_with_gemini
+from resume_processor import extract_text, parse_resume_with_openai, rank_candidates_with_openai
 
 # Load environment variables
 dotenv_path = find_dotenv()
@@ -43,9 +41,10 @@ def login_required(f):
 @login_required
 def upload():
     if request.method == 'POST':
-        if not os.getenv('GEMINI_API_KEY'):
-            logger.error('GEMINI_API_KEY is missing. Please set it in your .env file.')
-            flash('GEMINI_API_KEY is missing. Please set it in your .env file.', 'danger')
+        # Ensure correct API key for OpenAI is present
+        if not os.getenv('OPENAI_API_KEY'):
+            logger.error('OPENAI_API_KEY is missing. Please set it in your .env file.')
+            flash('OPENAI_API_KEY is missing. Please set it in your .env file.', 'danger')
             return render_template('index.html')
         job_description = request.form.get('job_description')
         custom_prompt = request.form.get('custom_prompt', '')
@@ -86,9 +85,9 @@ def upload():
                 )
                 session_db.add(resume_record)
 
-                extracted_data = parse_resume_with_gemini(resume_text)
+                extracted_data = parse_resume_with_openai(resume_text)
                 if not extracted_data:
-                    flash(f'Failed to process {resume.filename} with Gemini API.', 'danger')
+                    flash(f'Failed to process {resume.filename} with OpenAI API.', 'danger')
                     continue
 
                 extracted_json = json.dumps(extracted_data)
@@ -106,13 +105,14 @@ def upload():
             session_db.commit()
             logger.info('All resumes processed and saved.')
 
-            rankings = rank_candidates_with_gemini(job_description, custom_prompt, candidate_data)
+            rankings = rank_candidates_with_openai(job_description, custom_prompt, candidate_data)
             if rankings:
                 logger.info('Ranking candidates.')
                 for ranking in rankings:
                     profile = session_db.query(CandidateProfile).filter_by(resume_id=ranking.get('resume_id')).first()
                     if profile:
                         profile.fit_score = ranking.get('fit_score', 0.0)
+                        profile.reason = ranking.get('reason', profile.reason or 'No reason provided.')
                 session_db.commit()
                 logger.info('Candidate rankings committed to database.')
 

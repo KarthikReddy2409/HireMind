@@ -5,6 +5,9 @@ using the OpenAI API (Chat Completions).
 
 import os
 import json
+import time
+import random
+import logging
 from typing import List, Dict, Any
 
 import openai
@@ -12,7 +15,7 @@ from pdfminer.high_level import extract_text as extract_pdf_text
 
 # Read your API key from the environment or configure it some other secure way
 openai.api_key = os.getenv("OPENAI_API_KEY")
-print("Loaded OpenAI API Key:", repr(openai.api_key))
+# Removed printing the API key to avoid leaking secrets
 
 # Feel free to change the model to gpt-4o or another
 MODEL_NAME = "gpt-4o"  # Use a valid OpenAI model name
@@ -28,7 +31,6 @@ def extract_text(file_path: str) -> str:
         try:
             return extract_pdf_text(file_path)
         except Exception as exc:
-            import logging
             logging.error(f"[extract_text] PDF extraction failed: {exc}")
             return ""
     elif file_path.lower().endswith(".txt"):
@@ -36,11 +38,9 @@ def extract_text(file_path: str) -> str:
             with open(file_path, "r", encoding="utf-8", errors="ignore") as fh:
                 return fh.read()
         except Exception as exc:
-            import logging
             logging.error(f"[extract_text] Reading .txt failed: {exc}")
             return ""
     else:
-        import logging
         logging.error("[extract_text] Unsupported file type.")
         return ""
 
@@ -49,14 +49,46 @@ def extract_text(file_path: str) -> str:
 # Resume parsing
 # -----------------------------------------------------------
 
-def _call_openai(messages: List[Dict[str, str]], temperature: float = 0.2) -> str:
-    """Wrapper around the Chat Completion endpoint with sensible defaults."""
-    response = openai.chat.completions.create(
-        model=MODEL_NAME,
-        messages=messages,
-        temperature=temperature,
-    )
-    return response.choices[0].message.content.strip()
+def _call_openai(
+    messages: List[Dict[str, str]],
+    temperature: float = 0.2,
+    max_retries: int = 3,
+    base_delay: float = 1.0,
+) -> str:
+    """Wrapper around the Chat Completion endpoint with sensible defaults.
+
+    Adds retries with exponential backoff + jitter and logs failures.
+    Returns an empty string after exhausting retries so callers can handle gracefully.
+    """
+    if not openai.api_key:
+        # Treat missing API key as non-retryable
+        raise RuntimeError("OPENAI_API_KEY is not set. Please configure it in your environment.")
+
+    last_err: Exception | None = None
+    for attempt in range(1, max_retries + 1):
+        try:
+            response = openai.chat.completions.create(
+                model=MODEL_NAME,
+                messages=messages,
+                temperature=temperature,
+            )
+            return response.choices[0].message.content.strip()
+        except Exception as exc:
+            last_err = exc
+            err_name = exc.__class__.__name__
+            logging.warning(
+                f"[_call_openai] Attempt {attempt}/{max_retries} failed with {err_name}: {exc}"
+            )
+            # Decide whether to retry: for known client errors, don't bother
+            non_retryable = {"BadRequestError", "AuthenticationError"}
+            if err_name in non_retryable:
+                logging.error(f"[_call_openai] Non-retryable error: {err_name}. Aborting retries.")
+                break
+            if attempt < max_retries:
+                sleep_s = base_delay * (2 ** (attempt - 1)) + random.uniform(0, 0.5)
+                time.sleep(sleep_s)
+    logging.error(f"[_call_openai] OpenAI call failed after {max_retries} attempts: {last_err}")
+    return ""
 
 
 def parse_resume_with_openai(resume_text: str) -> Dict[str, Any]:
@@ -156,10 +188,3 @@ def rank_candidates_with_openai(
         except Exception:
             logging.error("[rank_candidates_with_openai] Failed to decode JSON.")
             return []
-
-
-# -----------------------------------------------------------
-# Aliases for backward compatibility with old import names
-# -----------------------------------------------------------
-parse_resume_with_gemini = parse_resume_with_openai
-rank_candidates_with_gemini = rank_candidates_with_openai
