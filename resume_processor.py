@@ -223,6 +223,7 @@ def parse_resume_with_openai(resume_text: str, *, blind: bool = True) -> Dict[st
                         "start": {"type": "string"},
                         "end": {"type": ["string", "null"]},
                     },
+                    "additionalProperties": False,
                 },
             },
             "tech": {
