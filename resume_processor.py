@@ -223,6 +223,7 @@ def parse_resume_with_openai(resume_text: str, *, blind: bool = True) -> Dict[st
                         "start": {"type": "string"},
                         "end": {"type": ["string", "null"]},
                     },
+                    "additionalProperties": False,
                 },
             },
             "tech": {
@@ -489,6 +490,49 @@ def rank_candidates_with_openai(
             return {"required_skills": req[:12], "nice_to_have": nice[:8], "domains": []}
 
     job_info = _extract_job_requirements(job_description, custom_prompt)
+
+    # Canonicalize JD skills to align with the resume tech buckets used in scoring
+    def _canonize_job(job: Dict[str, Any]) -> Dict[str, Any]:
+        KNOWN = {
+            # core langs/tools
+            "python","java","c++","r","sql","spark","hadoop","kafka",
+            # ml libs
+            "scikit-learn","sklearn","pytorch","tensorflow","xgboost","lightgbm",
+            # mlops / platforms
+            "docker","kubernetes","mlflow","airflow","sagemaker","azure ml",
+            # clouds
+            "aws","gcp","azure",
+        }
+        SYN = {
+            "sklearn": "scikit-learn",
+            "azure ml": "azure",
+            "aws sagemaker": "aws",
+            "sagemaker": "aws",
+            "ms azure": "azure",
+        }
+        def norm_list(vals):
+            out = []
+            for v in (vals or []):
+                s = str(v).strip().lower()
+                if not s:
+                    continue
+                s = SYN.get(s, s)
+                if s in KNOWN:
+                    out.append(s)
+            # de-dup but preserve order lightly
+            seen = set()
+            dedup = []
+            for t in out:
+                if t not in seen:
+                    dedup.append(t)
+                    seen.add(t)
+            return dedup
+        req = norm_list(job.get("required_skills", []))[:16]
+        nice = norm_list(job.get("nice_to_have", []))[:12]
+        dom = [str(d).strip() for d in (job.get("domains", []) or []) if str(d).strip()]
+        return {"required_skills": req, "nice_to_have": nice, "domains": dom}
+
+    job_info = _canonize_job(job_info)
 
     team_gap_vec = {"python": 0.2, "aws": 0.8, "kubernetes": 0.7, "nlp": 0.9, "mlops": 0.6}
 

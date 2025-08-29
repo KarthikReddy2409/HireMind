@@ -27,7 +27,22 @@ def jaccard(a: Set[str], b: Set[str]) -> float:
 def _lower_set(vals) -> Set[str]:
     if not isinstance(vals, list):
         return set()
-    return set(map(lambda s: str(s).lower(), vals))
+    # Normalize common synonyms so JD and resume tech align
+    SYN = {
+        "sklearn": "scikit-learn",
+        "azure ml": "azure",
+        "ms azure": "azure",
+        "aws sagemaker": "aws",
+        "sagemaker": "aws",
+    }
+    out: Set[str] = set()
+    for v in vals:
+        s = str(v).strip().lower()
+        if not s:
+            continue
+        s = SYN.get(s, s)
+        out.add(s)
+    return out
 
 
 def compute_subscores(parsed: Dict[str, Any], job: Dict[str, Any], team_gap_vec: Dict[str, float]) -> Dict[str, float]:

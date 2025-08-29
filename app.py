@@ -499,7 +499,18 @@ def candidate_highlight(resume_id):
         except Exception:
             spans = []
         body = _highlight_ranges(prof.redacted_text, spans)
-        return f"<html><body style='font-family:system-ui;padding:16px;line-height:1.5'>{body}</body></html>"
+        # Collect unique types for legend and total count
+        try:
+            types = sorted({str(s.get('type', 'evidence')) for s in spans if isinstance(s, dict)})
+        except Exception:
+            types = []
+        return render_template(
+            'highlight.html',
+            candidate=prof,
+            highlighted_text=body,
+            types=types,
+            span_count=len(spans)
+        )
     finally:
         db.close()
 
