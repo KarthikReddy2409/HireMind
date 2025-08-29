@@ -44,6 +44,9 @@
                     {% endif %}
                 {% endwith %}
                 <form method="post" enctype="multipart/form-data">
+                    {% if csrf_token %}
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+                    {% endif %}
                     <div class="mb-3">
                         <label for="job_description" class="form-label">Job Description</label>
                         <textarea class="form-control" id="job_description" name="job_description" rows="5" required></textarea>
@@ -53,8 +56,8 @@
                         <textarea class="form-control" id="custom_prompt" name="custom_prompt" rows="3"></textarea>
                     </div>
                     <div class="mb-3">
-                        <label for="resumes" class="form-label">Upload Resumes (PDF or TXT)</label>
-                        <input type="file" class="form-control" id="resumes" name="resumes" accept=".pdf,.txt" multiple required>
+                        <label for="resumes" class="form-label">Upload Resumes (PDF, DOCX or TXT)</label>
+                        <input type="file" class="form-control" id="resumes" name="resumes" accept=".pdf,.docx,.txt" multiple required>
                     </div>
                     <button type="submit" class="btn btn-primary btn-custom">Process Resumes</button>
                 </form>

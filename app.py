@@ -4,30 +4,57 @@ import uuid
 import json
 import logging
 from functools import wraps
-from flask import Flask, render_template, request, redirect, url_for, flash, session
-from sqlalchemy.orm import Session
+from flask import Flask, render_template, request, redirect, url_for, flash, session, send_from_directory
+# SQLAlchemy session is imported from models as DBSession
 from dotenv import load_dotenv, find_dotenv
-from models import Resume, CandidateProfile, engine, Session
-from resume_processor import extract_text, parse_resume_with_openai, rank_candidates_with_openai
+from models import Resume, CandidateProfile, engine, SessionLocal
+try:
+    from werkzeug.utils import secure_filename as _wk_secure_filename
+except Exception:
+    _wk_secure_filename = None
 
-# Load environment variables
+# Load environment variables ASAP to ensure OPENAI key is available before importing LLM code
 dotenv_path = find_dotenv()
 load_dotenv(dotenv_path, override=True)
+
+# Import LLM processors after .env is loaded to avoid missing keys at import time
+from resume_processor import extract_text, parse_resume_with_openai, rank_candidates_with_openai
+import html
+from markupsafe import Markup
+import hashlib
+import importlib
 
 # Create Flask application
 app = Flask(__name__)
 app.secret_key = os.getenv('FLASK_SECRET_KEY', 'supersecretkey')
 app.config['UPLOAD_FOLDER'] = 'resumes/'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
+ALLOWED_EXTENSIONS = {"pdf", "txt", "docx"}
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, filename='app.log', format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
+# Optional CSRF protection if Flask-WTF is installed
+try:
+    csrf_mod = importlib.import_module("flask_wtf")
+    CSRFProtect = getattr(csrf_mod, "CSRFProtect", None)
+    if CSRFProtect:
+        app.config["SECRET_KEY"] = os.getenv("SECRET_KEY", app.secret_key)
+        app.config["WTF_CSRF_TIME_LIMIT"] = 60 * 60
+        CSRFProtect(app)
+except Exception:
+    csrf_mod = None
+
 def secure_filename(filename):
+    """Prefer Werkzeug's secure_filename if available; else fallback to regex sanitizer."""
+    if _wk_secure_filename:
+        return _wk_secure_filename(filename)
     filename = os.path.basename(filename)
-    filename = re.sub(r'[^A-Za-z0-9_.-]', '_', filename)
-    return filename
+    return re.sub(r'[^A-Za-z0-9_.-]', '_', filename)
+
+def allowed_file(filename: str) -> bool:
+    return "." in filename and filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
 
 def login_required(f):
     @wraps(f)
@@ -58,14 +85,20 @@ def upload():
             logger.warning('No resumes uploaded.')
             flash('At least one resume is required.', 'danger')
             return redirect(url_for('upload'))
-
-        session_db = Session(bind=engine)
+        # Lightweight abuse guard: cap batch size
+        if len(resumes) > 100:
+            logger.warning('Too many files in one batch upload.')
+            flash('Please upload at most 100 files per batch.', 'warning')
+            return redirect(url_for('upload'))
+        session_db = SessionLocal()
         try:
             candidate_data = []
             for resume in resumes:
-                if not resume.filename.lower().endswith(('.pdf', '.txt')):
-                    logger.warning(f'Invalid file type for {resume.filename}. Only PDF and TXT are supported.')
-                    flash(f'Invalid file type for {resume.filename}. Only PDF and TXT are supported.', 'danger')
+                if not resume or not resume.filename:
+                    continue
+                if not allowed_file(resume.filename):
+                    logger.warning(f'Invalid file type for {resume.filename}. Only PDF, DOCX and TXT are supported.')
+                    flash(f'Invalid file type for {resume.filename}. Only PDF, DOCX and TXT are supported.', 'danger')
                     continue
 
                 resume_id = str(uuid.uuid4())
@@ -90,11 +123,17 @@ def upload():
                     flash(f'Failed to process {resume.filename} with OpenAI API.', 'danger')
                     continue
 
+                # Pull the exact redacted body the model saw to keep offsets stable
+                red_txt = extracted_data.pop('_redacted_text', None)
+                red_hash = hashlib.sha256((red_txt or '').encode('utf-8')).hexdigest() if red_txt else None
+
                 extracted_json = json.dumps(extracted_data)
                 profile = CandidateProfile(
                     resume_id=resume_id,
                     extracted_data=extracted_json,
-                    secondary_index=extracted_data.get('anonymized_id', f'Candidate_{resume_id[:8]}')
+                    secondary_index=f'Candidate_{resume_id[:8]}',
+                    redacted_text=red_txt,
+                    redacted_text_hash=red_hash,
                 )
                 session_db.add(profile)
                 candidate_data.append({
@@ -113,6 +152,60 @@ def upload():
                     if profile:
                         profile.fit_score = ranking.get('fit_score', 0.0)
                         profile.reason = ranking.get('reason', profile.reason or 'No reason provided.')
+                        # Persist explainability vectors if present
+                        subs = ranking.get('subscores')
+                        pens = ranking.get('penalties')
+                        evid = ranking.get('evidence_snippets')
+                        tf = ranking.get('top_factors')
+                        spans = ranking.get('evidence_spans')
+                        if subs is not None:
+                            try:
+                                profile.subscores = json.dumps(subs)
+                            except Exception:
+                                profile.subscores = '{}'
+                        if pens is not None:
+                            try:
+                                profile.penalties = json.dumps(pens)
+                            except Exception:
+                                profile.penalties = '{}'
+                        if evid is not None:
+                            try:
+                                profile.evidence_snippets = json.dumps(evid)
+                            except Exception:
+                                profile.evidence_snippets = '[]'
+                        if spans is not None:
+                            try:
+                                profile.evidence_spans = json.dumps(spans)
+                            except Exception:
+                                profile.evidence_spans = '[]'
+                        if tf is not None:
+                            try:
+                                profile.top_factors = json.dumps(tf)
+                            except Exception:
+                                profile.top_factors = '[]'
+                        if 'uncertainty' in ranking:
+                            try:
+                                profile.uncertainty = float(ranking.get('uncertainty') or 0.0)
+                            except Exception:
+                                profile.uncertainty = 0.0
+                        if ranking.get('scoring_version'):
+                            profile.scoring_version = str(ranking.get('scoring_version'))
+                        # Audit log for this scoring event
+                        try:
+                            logger.info(
+                                'scored',
+                                extra={
+                                    'resume_id': profile.resume_id,
+                                    'scoring_version': getattr(profile, 'scoring_version', ''),
+                                    'subscores': subs,
+                                    'penalties': pens,
+                                    'uncertainty': getattr(profile, 'uncertainty', 0.0),
+                                    'fit_score': getattr(profile, 'fit_score', 0.0),
+                                }
+                            )
+                        except Exception:
+                            # Avoid breaking flow if logger fails on extras
+                            logger.info(f"scored resume_id={profile.resume_id} fit={profile.fit_score}")
                 session_db.commit()
                 logger.info('Candidate rankings committed to database.')
 
@@ -127,6 +220,19 @@ def upload():
             logger.info('Database session closed.')
     return render_template('index.html')
 
+# Expose a csrf_token() helper to templates when CSRF is enabled
+@app.context_processor
+def inject_csrf_token():
+    def _csrf_token():
+        try:
+            if csrf_mod:
+                csrf_csrf = importlib.import_module('flask_wtf.csrf')
+                return getattr(csrf_csrf, 'generate_csrf')()
+        except Exception:
+            return ''
+        return ''
+    return dict(csrf_token=_csrf_token)
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -134,6 +240,12 @@ def login():
         password = request.form.get('password')
         expected_user = os.getenv('ADMIN_USER', 'admin')
         expected_pass = os.getenv('ADMIN_PASS', 'password')
+        is_prod = os.getenv('FLASK_ENV', os.getenv('ENV', '')).lower() == 'production'
+        using_defaults = (expected_user == 'admin' and expected_pass == 'password')
+        if is_prod and using_defaults:
+            logger.error('Default demo credentials are disabled in production.')
+            flash('Login disabled: configure ADMIN_USER and ADMIN_PASS for production.', 'danger')
+            return render_template('login.html')
         if username == expected_user and password == expected_pass:
             session['logged_in'] = True
             logger.info(f'User {username} logged in successfully.')
@@ -146,7 +258,7 @@ def login():
 @app.route('/dashboard')
 @login_required
 def dashboard():
-    db_session = Session(bind=engine)
+    db_session = SessionLocal()
     try:
         candidates = db_session.query(CandidateProfile).order_by(CandidateProfile.fit_score.desc()).all()
         logger.info('Loaded candidates for dashboard')
@@ -186,19 +298,220 @@ def format_candidate_data(idx, candidate, resume_obj, data):
     for project in data.get('projects', []):
         if isinstance(project, dict) and 'name' in project:
             projects.append(project['name'])
+    # Derive a flat skills list if not present
+    skills_list = data.get('skills')
+    if not skills_list:
+        tech = data.get('tech', {}) if isinstance(data.get('tech', {}), dict) else {}
+        skills_list = []
+        for k in ('languages', 'ml', 'or', 'cloud'):
+            vals = tech.get(k, [])
+            if isinstance(vals, list):
+                skills_list.extend([str(v) for v in vals])
+
+    # Ensure .0/.5 display of YOE
+    yoe = data.get('years_of_experience', 0)
+    yoe_display = (int(yoe * 2) / 2.0) if isinstance(yoe, (int, float)) else 0
     return {
         'rank': idx,
         'candidate_id': candidate.secondary_index,
+    'resume_id': candidate.resume_id,
         'resume_filename': os.path.basename(resume_obj.file_path),
         'resume_path': resume_obj.file_path,
         'fit_score': fit_score,
         'reason': candidate.reason,  # This will show None/null if not set
-        'years_of_experience': int(data.get('years_of_experience', 0)),
-        'skills': ', '.join(data.get('skills', [])),
+        'years_of_experience': yoe_display,
+        'skills': ', '.join(skills_list or []),
         'projects': '; '.join(projects)
     }
+
+
+def highlight_with_spans(text: str, spans: list[dict]) -> str:
+    """Render redacted text with <mark> highlights for non-overlapping spans.
+
+    Offsets must match the stored redacted_text (exactly what was sent to the LLM) to avoid drift.
+    """
+    if not text or not spans:
+        return html.escape(text or "")
+    # sanitize, sort & merge overlaps
+    clean = []
+    for s in spans:
+        try:
+            a = int(s.get('start'))
+            b = int(s.get('end'))
+            if b > a:
+                clean.append((max(0, a), max(0, b)))
+        except Exception:
+            continue
+    clean.sort(key=lambda x: x[0])
+    merged = []
+    for s,e in clean:
+        if not merged or s > merged[-1][1]:
+            merged.append([s,e])
+        else:
+            merged[-1][1] = max(merged[-1][1], e)
+    # build HTML
+    out = []
+    prev = 0
+    for s,e in merged:
+        out.append(html.escape(text[prev:s]))
+        out.append(f"<mark>{html.escape(text[s:e])}</mark>")
+        prev = e
+    out.append(html.escape(text[prev:]))
+    return ''.join(out)
+
+
+@app.route('/candidate/<resume_id>')
+@login_required
+def candidate_detail(resume_id: str):
+    db_session = SessionLocal()
+    try:
+        profile = db_session.query(CandidateProfile).filter_by(resume_id=resume_id).first()
+        if not profile:
+            flash('Candidate not found.', 'warning')
+            return redirect(url_for('dashboard'))
+        # Parse explainability artifacts
+        try:
+            spans = json.loads(profile.evidence_spans or '[]')
+        except Exception:
+            spans = []
+        try:
+            subscores = json.loads(profile.subscores or '{}')
+        except Exception:
+            subscores = {}
+        try:
+            penalties = json.loads(profile.penalties or '{}')
+        except Exception:
+            penalties = {}
+        try:
+            top_factors = json.loads(getattr(profile, 'top_factors', '[]') or '[]')
+        except Exception:
+            top_factors = []
+
+        highlighted = ''
+        if profile.redacted_text:
+            try:
+                highlighted = highlight_with_spans(profile.redacted_text, spans)
+            except Exception:
+                highlighted = html.escape(profile.redacted_text)
+
+        # Pull YoE from extracted_data, if present
+        try:
+            data = json.loads(profile.extracted_data or '{}')
+            yoe = data.get('years_of_experience', 0)
+            yoe_display = (int(yoe * 2) / 2.0) if isinstance(yoe, (int, float)) else 0
+        except Exception:
+            yoe_display = 0
+
+        return render_template(
+            'candidate.html',
+            candidate=profile,
+            highlighted_text=highlighted,
+            subscores=subscores,
+            penalties=penalties,
+            top_factors=top_factors,
+            yoe_display=yoe_display,
+        )
+    except Exception as e:
+        logger.error(f"Error loading candidate detail: {e}", exc_info=True)
+        flash('Could not load candidate details.', 'danger')
+        return redirect(url_for('dashboard'))
+    finally:
+        db_session.close()
+        logger.info('Database session closed (candidate detail).')
+
+@app.teardown_appcontext
+def remove_session(exc=None):
+    """Ensure the scoped session is removed at the end of the request context."""
+    try:
+        SessionLocal.remove()
+    except Exception:
+        pass
+
+
+@app.after_request
+def set_security_headers(resp):
+    """Add minimal security headers for basic hardening, with CSP tuned for our templates.
+
+    Notes:
+    - Allows Bootstrap from jsdelivr CDN
+    - Allows inline styles for the simple highlight view
+    - Adjust if you later add other CDNs
+    """
+    try:
+        resp.headers["X-Content-Type-Options"] = "nosniff"
+        resp.headers["X-Frame-Options"] = "DENY"
+        resp.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+        csp = (
+            "default-src 'self' data:; "
+            "img-src 'self' data:; "
+            "object-src 'none'; base-uri 'self'; frame-ancestors 'none'; "
+            "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; "
+            "script-src 'self' https://cdn.jsdelivr.net"
+        )
+        resp.headers["Content-Security-Policy"] = csp
+    except Exception:
+        pass
+    return resp
+
+
+def _highlight_ranges(text: str, spans: list) -> str:
+    """Render text with <mark> around spans and escape safely; returns Markup."""
+    if not text or not isinstance(spans, list):
+        return text or ""
+    # sanitize spans and sort by start
+    clean = []
+    for s in spans:
+        if not isinstance(s, dict):
+            continue
+        try:
+            a = int(s.get("start"))
+            b = int(s.get("end"))
+        except Exception:
+            continue
+        if b > a:
+            clean.append({"start": max(0, a), "end": max(0, b), "type": s.get("type", "evidence")})
+    clean.sort(key=lambda d: d["start"]) 
+
+    out, cur = [], 0
+    for s in clean:
+        st, en = s["start"], s["end"]
+        if st > cur:
+            out.append(html.escape(text[cur:st]))
+        frag = html.escape(text[st:en])
+        t = html.escape(str(s.get("type", "evidence")))
+        out.append(f"<mark data-type='{t}'>{frag}</mark>")
+        cur = en
+    if cur < len(text):
+        out.append(html.escape(text[cur:]))
+    return Markup("".join(out))
+
+
+@app.route("/candidate/<resume_id>/highlight")
+@login_required
+def candidate_highlight(resume_id):
+    db = SessionLocal()
+    try:
+        prof = db.query(CandidateProfile).filter_by(resume_id=resume_id).first()
+        if not prof or not getattr(prof, 'redacted_text', None):
+            return "No redacted text available", 404
+        try:
+            spans = json.loads(getattr(prof, 'evidence_spans', '[]') or '[]')
+        except Exception:
+            spans = []
+        body = _highlight_ranges(prof.redacted_text, spans)
+        return f"<html><body style='font-family:system-ui;padding:16px;line-height:1.5'>{body}</body></html>"
+    finally:
+        db.close()
+
+
+@app.route('/resumes/<path:filename>')
+@login_required
+def download_resume(filename: str):
+    # Serve files only from the configured UPLOAD_FOLDER
+    return send_from_directory(app.config['UPLOAD_FOLDER'], filename, as_attachment=True)
 
 if __name__ == '__main__':
     if not os.path.exists(app.config['UPLOAD_FOLDER']):
         os.makedirs(app.config['UPLOAD_FOLDER'])
-    app.run(debug=True)
+    debug_flag = os.getenv('FLASK_DEBUG', 'true').lower() in ('1', 'true', 'yes')
+    app.run(debug=debug_flag)
