@@ -27,12 +27,10 @@
         </div>
     </nav>
 
-    <div class="container mt-5">
-        <div class="card shadow-sm">
-            <div class="card-header bg-primary text-white">
-                <h2>Upload Resumes</h2>
-            </div>
-            <div class="card-body">
+    <div class="container mt-4">
+        <div class="card hoverable">
+            <div class="card-body p-4">
+                <h1 class="h4 mb-3">Upload Resumes</h1>
                 {% with messages = get_flashed_messages(with_categories=true) %}
                     {% if messages %}
                         {% for category, message in messages %}
@@ -43,23 +41,44 @@
                         {% endfor %}
                     {% endif %}
                 {% endwith %}
-                <form method="post" enctype="multipart/form-data">
+                                <form method="post" enctype="multipart/form-data" id="upload-form">
                     {% if csrf_token %}
                         <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
                     {% endif %}
-                    <div class="mb-3">
-                        <label for="job_description" class="form-label">Job Description</label>
-                        <textarea class="form-control" id="job_description" name="job_description" rows="5" required></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label for="custom_prompt" class="form-label">Custom Prompt (Optional)</label>
-                        <textarea class="form-control" id="custom_prompt" name="custom_prompt" rows="3"></textarea>
-                    </div>
-                    <div class="mb-3">
-                        <label for="resumes" class="form-label">Upload Resumes (PDF, DOCX or TXT)</label>
-                        <input type="file" class="form-control" id="resumes" name="resumes" accept=".pdf,.docx,.txt" multiple required>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-custom">Process Resumes</button>
+                                        <div class="row g-3">
+                                                <div class="col-12">
+                                                        <label for="job_description" class="form-label fw-semibold">Job Description</label>
+                                                        <textarea class="form-control rounded-xl" id="job_description" name="job_description" rows="5" placeholder="Paste your JD or choose an example." required></textarea>
+                                                </div>
+                                                <div class="col-md-6">
+                                                        <label for="role" class="form-label fw-semibold">Role (Suggested)</label>
+                                                        <select id="role" name="role" class="form-select rounded-xl">
+                                                                <option>Data Scientist</option>
+                                                                <option>Sr Backend (Python)</option>
+                                                                <option>PM (AI)</option>
+                                                        </select>
+                                                </div>
+                                                <div class="col-md-6">
+                                                        <label for="custom_prompt" class="form-label fw-semibold">Custom Prompt (Optional)</label>
+                                                        <input class="form-control rounded-xl" id="custom_prompt" name="custom_prompt" placeholder="Specify must-have skills, seniority, domain focus." />
+                                                </div>
+                                                <div class="col-12">
+                                                        <label class="form-label fw-semibold">Resumes</label>
+                                                        <div class="dropzone" id="dropzone">
+                                                                <div class="muted">Drag & drop files here, or <span class="text-primary">click to browse</span></div>
+                                                                <input type="file" id="resumes" name="resumes" accept=".pdf,.docx,.txt" multiple hidden required>
+                                                                <div id="file-list" class="d-flex flex-wrap gap-2 mt-2"></div>
+                                                        </div>
+                                                </div>
+                                                <div class="col-12">
+                                                        <div class="progress-slim" aria-hidden="true">
+                                                                <div class="bar" id="progress-bar" style="width:0%"></div>
+                                                        </div>
+                                                </div>
+                                                <div class="col-12 d-flex justify-content-end">
+                                                        <button type="submit" class="btn btn-primary">Process resumes</button>
+                                                </div>
+                                        </div>
                 </form>
             </div>
         </div>

@@ -36,29 +36,36 @@
   </nav>
 
   <div class="container py-4">
-    <div class="d-flex align-items-center justify-content-between mb-3">
-      <h2 class="mb-0">Candidate {{ candidate.secondary_index }}</h2>
-      <span class="badge bg-success">Fit: {{ '%.2f'|format(candidate.fit_score or 0.0) }}</span>
-    </div>
-
+  <div class="mb-3"><a href="/dashboard" class="text-decoration-underline">Dashboard</a> / <span>{{ display_name or candidate.secondary_index }}</span></div>
     <div class="row g-4">
-      <div class="col-md-7">
-        <h5 class="fw-semibold">Redacted Resume (Highlighted)</h5>
-        <div class="resume-box">{{ highlighted_text|safe }}</div>
-      </div>
-      <div class="col-md-5">
-        <div class="card shadow-sm mb-3">
-          <div class="card-header bg-light fw-semibold">Summary</div>
+      <div class="col-lg-7">
+        <div class="card hoverable">
           <div class="card-body">
-            <div class="mb-2"><strong>Resume File:</strong> {{ candidate.resume_id }}.pdf</div>
-            <div class="mb-2"><strong>Years of Experience:</strong> {{ yoe_display }}</div>
-            <div class="mb-2"><strong>Scoring Version:</strong> {{ candidate.scoring_version or 'n/a' }}</div>
-            <div class="mb-2"><strong>Uncertainty:</strong> {{ candidate.uncertainty or 0.0 }}</div>
+            <h5 class="fw-semibold mb-3">Readable Resume Highlights</h5>
+            <div class="resume-box">{{ highlighted_text|safe }}</div>
           </div>
         </div>
-        <div class="card shadow-sm mb-3">
-          <div class="card-header bg-light fw-semibold">Top factors</div>
+      </div>
+      <div class="col-lg-5">
+        <div class="card text-center">
           <div class="card-body">
+            <div class="ring" style="--p: {{ (candidate.fit_score or 0) }}" data-score="{{ (candidate.fit_score or 0)|round(0) }}"></div>
+            <div class="mt-2">
+              {% if candidate.skills %}
+                {% for skill in candidate.skills.split(',')[:3] %}
+                  <span class="chip me-1">{{ skill.strip() }}</span>
+                {% endfor %}
+              {% endif %}
+            </div>
+            <div class="mt-3 d-flex justify-content-center gap-3">
+              <span class="chip">YOE: {{ yoe_display }}</span>
+              <span class="chip">Unc: {{ candidate.uncertainty or 0.0 }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="card mt-3">
+          <div class="card-body">
+            <div class="fw-semibold mb-2">Top factors</div>
             {% if top_factors %}
               <ul class="mb-0">
                 {% for f in top_factors %}
@@ -68,12 +75,9 @@
             {% else %}
               <div class="text-muted">No top factors recorded.</div>
             {% endif %}
-          </div>
-        </div>
-        <div class="card shadow-sm">
-          <div class="card-header bg-light fw-semibold">Explainability</div>
-          <div class="card-body">
-            <h6>Subscores</h6>
+            <hr/>
+            <div class="fw-semibold mb-2">Explainability</div>
+            <div class="mb-2">Subscores</div>
             {% if subscores %}
               <ul>
                 {% for k,v in subscores.items() %}
@@ -83,7 +87,7 @@
             {% else %}
               <div class="text-muted">No subscores.</div>
             {% endif %}
-            <h6 class="mt-3">Penalties</h6>
+            <div class="mt-2 mb-1">Penalties</div>
             {% if penalties %}
               <ul>
                 {% for k,v in penalties.items() %}

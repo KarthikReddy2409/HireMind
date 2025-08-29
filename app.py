@@ -311,9 +311,18 @@ def format_candidate_data(idx, candidate, resume_obj, data):
     # Ensure .0/.5 display of YOE
     yoe = data.get('years_of_experience', 0)
     yoe_display = (int(yoe * 2) / 2.0) if isinstance(yoe, (int, float)) else 0
+    # Derive a non-PII display name from the uploaded filename (without extension)
+    base_name = os.path.splitext(os.path.basename(resume_obj.file_path))[0]
+    # Strip the UUID prefix if present (pattern: <uuid>_originalName)
+    parts = base_name.split('_', 1)
+    if len(parts) == 2 and re.match(r"^[0-9a-fA-F-]{8}", parts[0] or ""):
+        base_name = parts[1]
+    display_name = base_name or candidate.secondary_index
+
     return {
         'rank': idx,
         'candidate_id': candidate.secondary_index,
+        'display_name': display_name,
     'resume_id': candidate.resume_id,
         'resume_filename': os.path.basename(resume_obj.file_path),
         'resume_path': resume_obj.file_path,
@@ -402,6 +411,16 @@ def candidate_detail(resume_id: str):
         except Exception:
             yoe_display = 0
 
+        # Compute display name similar to dashboard
+        try:
+            base_name = os.path.splitext(os.path.basename(profile.resume.file_path))[0]
+            parts = base_name.split('_', 1)
+            if len(parts) == 2 and re.match(r"^[0-9a-fA-F-]{8}", parts[0] or ""):
+                base_name = parts[1]
+            display_name = base_name or profile.secondary_index
+        except Exception:
+            display_name = profile.secondary_index
+
         return render_template(
             'candidate.html',
             candidate=profile,
@@ -410,6 +429,7 @@ def candidate_detail(resume_id: str):
             penalties=penalties,
             top_factors=top_factors,
             yoe_display=yoe_display,
+            display_name=display_name,
         )
     except Exception as e:
         logger.error(f"Error loading candidate detail: {e}", exc_info=True)
@@ -504,12 +524,23 @@ def candidate_highlight(resume_id):
             types = sorted({str(s.get('type', 'evidence')) for s in spans if isinstance(s, dict)})
         except Exception:
             types = []
+        # Compute display name for title
+        try:
+            base_name = os.path.splitext(os.path.basename(prof.resume.file_path))[0]
+            parts = base_name.split('_', 1)
+            if len(parts) == 2 and re.match(r"^[0-9a-fA-F-]{8}", parts[0] or ""):
+                base_name = parts[1]
+            display_name = base_name or prof.secondary_index
+        except Exception:
+            display_name = prof.secondary_index
+
         return render_template(
             'highlight.html',
             candidate=prof,
             highlighted_text=body,
             types=types,
-            span_count=len(spans)
+            span_count=len(spans),
+            display_name=display_name,
         )
     finally:
         db.close()

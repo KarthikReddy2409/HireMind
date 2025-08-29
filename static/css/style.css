@@ -1,7 +1,25 @@
 
+/* Base layout */
+:root {
+    --primary-50: #eef4ff;
+    --primary-100: #d9e6ff;
+    --primary-200: #b7ceff;
+    --primary-300: #8bb0ff;
+    --primary-400: #5e91ff;
+    --primary-500: #3678ff;
+    --primary-600: #2563eb;
+    --primary-700: #1e55cb;
+    --slate-50: #f8fafc;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-300: #cbd5e1;
+    --slate-600: #475569;
+    --slate-700: #334155;
+}
+
 body {
     font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
-    background: #f4f6f8;
+    background: var(--slate-50);
     margin: 0;
     padding: 0;
 }
@@ -10,9 +28,7 @@ body {
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-.container, .container-fluid {
-    max-width: 1200px;
-}
+.container, .container-fluid { max-width: 1200px; }
 
 .dashboard-container {
     max-width: 1200px;
@@ -21,60 +37,70 @@ body {
     padding: 0;
 }
 
-.candidate-card {
+/* Cards */
+.card, .candidate-card {
     border-radius: 16px;
     background: #fff;
     box-shadow: 0 2px 12px rgba(0,0,0,0.07);
     transition: box-shadow 0.2s;
 }
-.candidate-card:hover {
-    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-}
+.candidate-card:hover, .card.hoverable:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.12); }
 
+/* Avatar chip used for rank */
 .avatar {
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 600;
-    background: #007bff;
-    color: #fff;
+    width: 48px; height: 48px; display: inline-flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; font-weight: 700; background: var(--primary-600); color: #fff; border-radius: 999px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-.badge {
-    font-size: 0.95rem;
-    padding: 0.5em 0.8em;
-    border-radius: 8px;
+.fw-semibold { font-weight: 600; }
+.card-title { font-size: 1.1rem; font-weight: 500; }
+.list-unstyled { margin-bottom: 0; }
+
+/* Search bar */
+.search-bar {
+    display: flex; align-items: center; gap: .5rem; background: #fff; border: 1px solid var(--slate-200);
+    padding: .5rem .75rem; border-radius: 12px; box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+.search-bar input { border: 0; outline: none; width: 220px; color: var(--slate-700); }
+.search-bar .icon { color: var(--slate-600); }
+
+/* Chip */
+.chip { padding: .25rem .6rem; border-radius: 10px; font-size: .85rem; border: 1px solid var(--slate-200); background: var(--slate-100); color: var(--slate-700); }
+.chip.primary { background: var(--primary-50); color: var(--primary-700); border-color: #c7d2fe; }
+
+/* Banner */
+.banner {
+    background: #eff6ff; border: 1px solid #bfdbfe; color: #1e3a8a; padding: .5rem .75rem; border-radius: 12px;
 }
 
-.fw-semibold {
-    font-weight: 600;
+/* Dropzone */
+.dropzone {
+    border: 2px dashed var(--slate-300); border-radius: 16px; padding: 1.25rem; text-align: center; background: #fff;
 }
+.dropzone.over { background: var(--primary-50); border-color: var(--primary-300); }
 
-.card-title {
-    font-size: 1.1rem;
-    font-weight: 500;
-}
+/* Progress */
+.progress-slim { height: 8px; border-radius: 999px; overflow: hidden; background: var(--slate-200); }
+.progress-slim > .bar { height: 100%; background: #22c55e; transition: width .2s ease; }
 
-.list-unstyled {
-    margin-bottom: 0;
+/* Score ring (CSS-only conic gradient) */
+.ring { --p: 0; --size: 96px; --track: #e5e7eb; --gradA: #60a5fa; --gradB: var(--primary-600); position: relative; width: var(--size); height: var(--size); display: inline-block; border-radius: 999px; }
+.ring::before { content: ''; position: absolute; inset: 0; border-radius: inherit; background:
+    conic-gradient(var(--gradB) calc(var(--p)*1%), var(--track) 0);
 }
+.ring::after { content: attr(data-score); position: absolute; inset: 8px; background: #fff; border-radius: inherit; display: grid; place-items: center; font-weight: 600; font-size: 1.25rem; color: #111827; }
+.ring.small { --size: 72px; }
+
+/* Utilities */
+.muted { color: var(--slate-600); }
+.rounded-xl { border-radius: 12px; }
+.btn-outline-slate { border: 1px solid var(--slate-300); color: var(--slate-700); background: #fff; }
+.btn-outline-slate:hover { background: var(--slate-100); }
 
 @media (max-width: 768px) {
-    .dashboard-container, .container, .container-fluid {
-        max-width: 100%;
-        padding: 0 8px;
-    }
-    .candidate-card {
-        border-radius: 10px;
-        padding: 8px;
-    }
-    .avatar {
-        width: 36px;
-        height: 36px;
-        font-size: 1.1rem;
-    }
+    .dashboard-container, .container, .container-fluid { max-width: 100%; padding: 0 8px; }
+    .candidate-card { border-radius: 10px; padding: 8px; }
+    .avatar { width: 36px; height: 36px; font-size: 1.1rem; }
+    .search-bar input { width: 140px; }
 }
