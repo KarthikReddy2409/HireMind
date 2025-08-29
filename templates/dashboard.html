@@ -45,7 +45,9 @@
                             <div>
                                 <h5 class="card-title mb-0">{{ candidate.candidate_id }}</h5>
                                 <span class="badge bg-success ms-2">Fit Score: {{ candidate.fit_score if candidate.fit_score is not none else 'N/A' }}</span>
-                                <a href="/resumes/{{ candidate.resume_path.split('/')[-1] }}" class="btn btn-sm btn-outline-primary ms-2" download>Download Resume</a>
+                                <a href="/resumes/{{ candidate.resume_filename }}" class="btn btn-sm btn-outline-primary ms-2" download>Download</a>
+                                <a href="{{ url_for('candidate_detail', resume_id=candidate.resume_id) }}" class="btn btn-sm btn-secondary ms-2">View details</a>
+                                <a href="{{ url_for('candidate_highlight', resume_id=candidate.resume_id) }}" class="btn btn-sm btn-warning ms-2">View highlights</a>
                             </div>
                         </div>
                         <div class="mb-2">
